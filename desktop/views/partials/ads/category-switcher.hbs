@@ -1,0 +1,39 @@
+<div class="category-filters">
+  <div class="select category-filter">
+    <span class="category-filter__selected handle">
+      <div class="category-filter__selected--icon icon--{{currentCategory.icon}}"></div> {{currentCategory.name}}
+    </span>
+
+    <ul class="category-filter__options submenu">
+      {{#each categoryLinks}}
+      <li {{#ifEqual id ../currentCategory.id}}class="selected"{{/ifEqual}}><a href="{{link}}"><div class="icon--{{icon}}"></div> <span>{{name}}</span></a></li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div id="otherFilters" class="select other-filter fr">
+    <div id="otherFiltersLabel" class="other-filter--label text--muted text--small handle">
+      {{__ 'Filters'}}
+    </div>
+    <form method="get" id="filters" action="/" name="filters" autocomplete="off">
+      <ul class="other-filter__options ">
+
+        {{#ifEqual currentCategory.id 6}}
+          {{> filters/bike}}
+        {{/ifEqual}}
+
+        {{#ifEqual currentCategory.id 2}}
+          {{> filters/fashion}}
+        {{/ifEqual}}
+        
+        {{> filters/common}}
+        <li class="button_wrapper">
+          <div class="btn--block mtm text--center">
+            <button type="reset" id="reset" class="btn btn--gray mrm">{{__ 'Reset'}}</button>
+            <button class="btn btn--primary">{{__ 'Apply filters'}}</button>
+          </div>
+        </li>
+      </ul>
+    </form>
+  </div>
+</div>

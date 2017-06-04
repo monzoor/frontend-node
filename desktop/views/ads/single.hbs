@@ -1,0 +1,84 @@
+{{> ads/criteo-tracking-code-ad-view}}
+<div class="container-sm mtl">
+  <div class="slider">
+    <div class="img-slider">
+      <ul>
+        {{#each images}}
+          <li><img src="{{this}}"/></li>
+        {{/each}}
+      </ul>
+      {{#if multipleImages}}
+        <div class="slider__navigation">
+          <a href="#" class="slider__nav slider__nav--prev"><i class="icon-left-open"></i></a>
+          <a href="#" class="slider__nav slider__nav--next"><i class="icon-right-open"></i></a>
+        </div>
+        <div class="slider__thumbnails">
+          {{#each thumbnails}}
+            <a href="" class="thumbnail">
+              <img src="{{this}}"/>
+            </a>
+          {{/each}}
+        </div>
+      {{/if}}
+    </div>
+  </div>
+  <div class="ad_details">
+    <button class="btn btn--facebook fr" data-action="fb-share-page"><i class="icon-facebook-official"></i> Share</button>
+    <h1 class="text--dark-gray ad_details__title">{{ad.title}}</h1>
+    <p class="text--orange text--lead fl"><strong>৳ {{prettyNumber ad.price}}</strong></p>
+    <div class="panel ad_details__description text--dark-gray">
+      <p>{{{ad.description}}}</p>
+    </div>
+    <div class="panel meta">
+      <div class="ad_details--meta">
+        <p class="mbn text--muted"><i class="icon-location"></i>{{ad.address}}</p>
+      </div>
+      <div class="ad_details--meta">
+        <p class="mbn text--muted"><i class="icon-clock"></i> {{ad.list_time}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="contact-details mtl">
+    <div class="contact-details--headline">
+      <p class="text--sub-headline mbn">{{__ 'contact the seller'}}</p>
+    </div>
+    {{#unless isOwn}}
+      {{#unless ad.hidePhone}}
+        <div id="phoneNumberShow" class="contact-details__phone-number  pal hide">
+          <p class=" mbn text--white text--center">{{__ "Seller's phone number"}} </p>
+          <p class="text--sub-headline mbn text--white text--center">{{phoneNumber.pretty}}</p>
+        </div>
+      {{/unless}}
+      <div class="contact-details__buttons">
+        {{#unless ad.hidePhone}}
+          <a id="showPhoneBtn" onclick="loadCriteoForPhoneNumber()" class="btn btn--primary btn--block"><i class="icon-phone"></i> {{__ 'Show mobile Number'}}
+          </a>
+        {{/unless}}
+
+        {{#unless isFromBlocket}}
+          <a href="{{chatLink}}" onclick="loadCriteoForFreeChat(event,this)" class="btn btn--primary btn--block mbn"><i class="icon-chat"></i> {{__ "FREE CHAT"}}</a>
+        {{/unless}}
+      </div>
+    {{/unless}}
+    {{#unless isFromBlocket}}
+      <div class="contact-details__seller-details">
+        <a href="/profile/{{ad.account.account_id}}">
+          <div class="seller-details">
+            <div class="seller-details__profile-picture">
+              <img class="avatar avatar--md" src="{{imageBaseUrl}}/image/avatar/{{ad.avatar}}/thumb" alt="">
+            </div>
+            <div class="seller-details__others text--center">
+              <p class="mbs text--dark-gray"><strong>{{ad.account.name}}</strong>.</p>
+              <div class="verified"><i class="icon-ok-circled verified__icon"></i>
+                <span class="verified__text">{{__ 'Phone number verified'}}</span></div>
+            </div>
+            <i class="icon icon-right-open text--muted"></i>
+          </div>
+        </a>
+      </div>
+    {{/unless}}
+  </div>
+  <div class="mtm ad_modify">
+    <a href="/ad/{{adSlug}}/delete" class="fl text--muted ad_modify--link">{{__ 'Is this your ad?'}} <span class="text--red">{{__ 'Delete ad'}}</span></a>
+  </div>
+</div>

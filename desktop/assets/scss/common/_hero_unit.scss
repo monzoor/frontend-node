@@ -1,0 +1,39 @@
+.hero-unit {
+  $text-color: $black;
+
+  padding: 60px 0 100px 0;
+  margin: 0 60px -55px 60px;
+  color: $top-text-color;
+  line-height: 1.4;
+  text-align: center;
+  
+  // Make the hero unit connect with the header
+  margin-top: -15px;
+
+  /* Background image */
+  background-image: url(../img/hero.png);
+  background-repeat: no-repeat;
+  background-position: right -5px;
+
+  /* Retina background */
+  @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+  only screen and (-moz-min-device-pixel-ratio: 1.5),
+  only screen and (-o-min-device-pixel-ratio: 3/2),
+  only screen and (min-device-pixel-ratio: 1.5) {
+    background-image: url(../img/hero@2x.png);
+    background-size: 316px 241px;
+  }
+
+  &__heading,
+  &__subheading {
+    margin: 0;
+
+    // Left edge should be in the center
+    width: ($container-width / 2) - 100px;
+  }
+
+  &__subheading {
+    font-size: 1.1em;
+    padding: 0 20px;
+  }
+}

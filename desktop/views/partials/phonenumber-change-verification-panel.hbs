@@ -1,0 +1,18 @@
+<div class="overlay hidden" id="verifyPhone">
+  <div class="overlay-content panel panel-dialog pal">
+    <h3 class="mtn text--center">{{__ 'Verify new phone number'}}</h3>
+    <form action="/account/phone/verify" method="post">
+      <p class="mbs text--center ">{{{__ "An SMS verification code was sent to your phone. Please enter this code below to complete your registration" }}}</p>
+      <div class="alert alert-success mbs hide" id="numberVerifyResend">
+        <span>{{__ 'Verification code sent'}}</span>
+      </div>
+      <div class="form--group placeholder-center">
+        <input class="form-field" placeholder="{{__ "Verification code"}}" type="number" name="otp">
+        {{#if errors.otp}}<span class="error">{{errors.otp}}</span>{{/if}}
+      </div>
+      
+      <p class="text--center text--muted mts">{{{__ "Sent to <strong>%s</strong>. Didn't receive anything?" unverifiedPhone }}} <a id="resendVerification" href="">{{__ "Send again"}}</a></p>
+      <button class="btn btn--primary btn--block" type="submit">{{__ "Verify"}}</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.error-bg {
+  background-image: url("../img/error-bg.png");
+  width: 320px;
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  .error-type {
+    display: block;
+    text-align: center;
+    font-size: 100px;
+    padding-top: 90px;
+    color: #0076ad;
+    font-weight: 600;
+    font-style: italic;
+  }
+}
+.error-message {
+  margin-top: 20px;
+  font-size: 2em;
+  line-height: 1.2em;
+}

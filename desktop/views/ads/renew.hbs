@@ -1,0 +1,35 @@
+<div class="container-sm mtl">
+	<div class="ad-lists">
+		<div class="ad">
+		  <a href="/ad/{{ad.id}}">
+		    <div class="ad__image-wrapper small" style="background-image: url({{imageBaseUrl}}/image/item/{{ad.id}}/thumb)"></div>
+		    <div class="ad__content">
+		      <h2 class="ad__content--headline text--dark-gray text--truncate">{{ad.attributes.title}}</h2>
+		      <p class="ad__content--description text--dark-gray ">{{truncate ad.attributes.description 60}}</p>
+		    </div>
+		    <div class="ad__price">
+		      <p class="text--orange man"><strong>৳ {{prettyNumber ad.attributes.price}}</strong><i class="icon-right-open text--dark-gray mll"></i></p>
+		    </div>
+		  </a>
+		</div>
+	</div>
+</div>
+
+<div class="container-sm panel mtl">
+	<form action="" method="post">
+		<p class="text--sub-headline text--center mbn mts">{{__ "What do you want to do?"}}</p>
+		<div class="text--center mtm">
+	    <div class="input-group radio center-aligned text--left mza">
+	      <label><input type="radio" name="reason" value="published"> {{__ 'Extend my ad for FREE 30 days'}}</label>
+	      <label><input type="radio" name="reason" value="sold"> {{__ 'Delete my ad because I sold it on ekhanei.com'}}</label>
+	      <label><input type="radio" name="reason" value="soldoutside"> {{__ 'Delete my ad because I sold it by other means'}}</label>
+	      <label><input type="radio" name="reason" value="unsold"> {{__ 'Delete my ad because I changed my mind'}}</label>
+	    </div>
+	    {{#if errors.reason}}<span class="error text-center">{{errors.reason}}</span>{{/if}}
+	  </div>
+
+		<div class="btn--group mtl">
+			<button class="btn btn--primary btn--block" type="submit">{{__ 'Submit'}}</button>
+	  </div>
+	</form>
+</div>

@@ -1,0 +1,100 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## Grayscale and brand colors for use across Ekhanei.
+
+// Grayscale
+$gray-dark:    #333333;
+$gray:         #666666;
+$gray-light:   #999999;
+$gray-lighter: #ededed;
+$white:        #ffffff;
+$black:        #000000;
+
+// Brand Colors
+$brand-yellow: #FEBE10;
+$brand-blue:   #007FBB;
+$brand-green:  #57A74B;
+$brand-red:    #D43E3E;
+
+// Other colors
+$orange: #ee8c2a;
+$green:  #56a84d;
+$facebook-blue: #4267b2;
+
+// Brand meanings
+$brand-primary:   $brand-green;
+$brand-secondary: $brand-blue;
+$brand-danger:    $brand-red;
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+$body-bg:    lighten($gray,50%);
+$text-color: $gray-dark;
+$link-color: $brand-blue;
+$font-size-base: 14px;
+
+// Header
+$header-height: 60px;
+$top-color: #ffc933; // Lighter shade of $brand-yellow
+$top-text-color: darken($top-color, 50%);
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+//== Forms
+//
+//## Form styles
+
+$placeholder-color: $gray-light;
+
+
+//== Buttons
+//
+//## For each button, define text, background and border color.
+
+$btn-default-color:    $gray;
+$btn-default-bg:       $white;
+$btn-default-border:   darken($white, 25%);
+
+$btn-primary-color:    $white;
+$btn-primary-bg:       $brand-primary;
+$btn-primary-border:   #498f42;
+
+$btn-danger-color:  $white;
+$btn-danger-bg:     $brand-danger;
+$btn-danger-border: darken($brand-danger, 10%);
+
+$btn-gray-color:  #666666;
+$btn-gray-bg:     #e5e5e5;
+$btn-gray-border: #cccccc;
+
+$btn-secondary-color:  $white;
+$btn-secondary-bg:     $orange;
+$btn-secondary-border: darken($orange, 10%);
+
+// Containers
+$container-width:    960px;
+$container-width-sm: 650px;
+
+
+// Spacing
+$spacing-sm: 10px;
+$spacing-md: 15px;
+$spacing-lg: 20px;
+
+// Other
+$panel-shadow: 2px 2px 0 rgba(0, 0, 0, .05);
+$elevated-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+$item-highlight-color: lighten($brand-blue, 60%);
+

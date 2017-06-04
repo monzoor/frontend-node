@@ -1,0 +1,21 @@
+<li>
+  {{#if searchQuery}}
+    <input type="hidden" name="q" value="{{searchQuery}}">
+  {{/if}}
+  {{#unlessEqual currentCategory.id 0}}
+    <input type="hidden" name="cat" value="{{currentCategory.id}}">
+  {{/unlessEqual}}
+  <div class="price">
+    <div class="price__title"><strong>{{__ 'Price Range'}}</strong></div>
+    <div class="price__min">
+      <input type="number" placeholder="Min" min="1" name="low-price" value="{{currentPriceFilter.min}}">
+    </div>
+    <div class="price__max">
+      <div class="addon">{{__ 'Tk'}}</div>
+      <div class="input-group">
+        <input type="number" placeholder="Max" name="high-price" value="{{currentPriceFilter.max}}">
+      </div>
+    </div>
+
+  </div>
+</li>

@@ -1,0 +1,22 @@
+<div class="container-sm panel mtl pal">
+  <form action="" method="post">
+    <p class="text--center text--lead">{{{__ "Select your reason for complaining about this ad and <br> write more details if you want."}}}</p>
+
+    <div class="form--group select">
+      <select name="reason" class="form-field ">
+        <option disabled {{#unless form.reason}}selected{{/unless}}>{{__ "Select a reason"}}</option>
+        {{#each reasons}}
+          <option value="{{id}}" {{setSelect ../form.reason id}}>{{name}}</option>
+        {{/each}}
+      </select>
+      {{#if errors.reason}}<span class="error">{{errors.reason}}</span>{{/if}}
+    </div>
+
+    <div class="form--group">
+      <textarea class="form--field mtm" name="comments" placeholder="{{__ "Comments (optional)"}}">{{form.comments}}</textarea>
+      {{#if errors.comments}}<span class="error">{{errors.comments}}</span>{{/if}}
+    </div>
+
+    <button class="btn btn--primary btn--block mtm" type="submit">{{__ "Submit"}}</button>
+  </form>
+</div>

@@ -1,0 +1,466 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$sprite-all-name: 'sprite-all';
+$sprite-all-x: 102px;
+$sprite-all-y: 78px;
+$sprite-all-offset-x: -102px;
+$sprite-all-offset-y: -78px;
+$sprite-all-width: 24px;
+$sprite-all-height: 24px;
+$sprite-all-total-width: 161px;
+$sprite-all-total-height: 136px;
+$sprite-all-image: '../img/sprite.png';
+$sprite-all: (102px, 78px, -102px, -78px, 24px, 24px, 161px, 136px, '../img/sprite.png', 'sprite-all', );
+$sprite-bicycle-name: 'sprite-bicycle';
+$sprite-bicycle-x: 68px;
+$sprite-bicycle-y: 78px;
+$sprite-bicycle-offset-x: -68px;
+$sprite-bicycle-offset-y: -78px;
+$sprite-bicycle-width: 24px;
+$sprite-bicycle-height: 24px;
+$sprite-bicycle-total-width: 161px;
+$sprite-bicycle-total-height: 136px;
+$sprite-bicycle-image: '../img/sprite.png';
+$sprite-bicycle: (68px, 78px, -68px, -78px, 24px, 24px, 161px, 136px, '../img/sprite.png', 'sprite-bicycle', );
+$sprite-bikes-name: 'sprite-bikes';
+$sprite-bikes-x: 40px;
+$sprite-bikes-y: 44px;
+$sprite-bikes-offset-x: -40px;
+$sprite-bikes-offset-y: -44px;
+$sprite-bikes-width: 24px;
+$sprite-bikes-height: 24px;
+$sprite-bikes-total-width: 161px;
+$sprite-bikes-total-height: 136px;
+$sprite-bikes-image: '../img/sprite.png';
+$sprite-bikes: (40px, 44px, -40px, -44px, 24px, 24px, 161px, 136px, '../img/sprite.png', 'sprite-bikes', );
+$sprite-cars-bikes-parts-name: 'sprite-cars_bikes_parts';
+$sprite-cars-bikes-parts-x: 74px;
+$sprite-cars-bikes-parts-y: 44px;
+$sprite-cars-bikes-parts-offset-x: -74px;
+$sprite-cars-bikes-parts-offset-y: -44px;
+$sprite-cars-bikes-parts-width: 24px;
+$sprite-cars-bikes-parts-height: 24px;
+$sprite-cars-bikes-parts-total-width: 161px;
+$sprite-cars-bikes-parts-total-height: 136px;
+$sprite-cars-bikes-parts-image: '../img/sprite.png';
+$sprite-cars-bikes-parts: (74px, 44px, -74px, -44px, 24px, 24px, 161px, 136px, '../img/sprite.png', 'sprite-cars_bikes_parts', );
+$sprite-clothes-gifts-name: 'sprite-clothes_gifts';
+$sprite-clothes-gifts-x: 108px;
+$sprite-clothes-gifts-y: 44px;
+$sprite-clothes-gifts-offset-x: -108px;
+$sprite-clothes-gifts-offset-y: -44px;
+$sprite-clothes-gifts-width: 24px;
+$sprite-clothes-gifts-height: 24px;
+$sprite-clothes-gifts-total-width: 161px;
+$sprite-clothes-gifts-total-height: 136px;
+$sprite-clothes-gifts-image: '../img/sprite.png';
+$sprite-clothes-gifts: (108px, 44px, -108px, -44px, 24px, 24px, 161px, 136px, '../img/sprite.png', 'sprite-clothes_gifts', );
+$sprite-food-animals-name: 'sprite-food_animals';
+$sprite-food-animals-x: 0px;
+$sprite-food-animals-y: 78px;
+$sprite-food-animals-offset-x: 0px;
+$sprite-food-animals-offset-y: -78px;
+$sprite-food-animals-width: 24px;
+$sprite-food-animals-height: 24px;
+$sprite-food-animals-total-width: 161px;
+$sprite-food-animals-total-height: 136px;
+$sprite-food-animals-image: '../img/sprite.png';
+$sprite-food-animals: (0px, 78px, 0px, -78px, 24px, 24px, 161px, 136px, '../img/sprite.png', 'sprite-food_animals', );
+$sprite-furniture-home-name: 'sprite-furniture_home';
+$sprite-furniture-home-x: 34px;
+$sprite-furniture-home-y: 78px;
+$sprite-furniture-home-offset-x: -34px;
+$sprite-furniture-home-offset-y: -78px;
+$sprite-furniture-home-width: 24px;
+$sprite-furniture-home-height: 24px;
+$sprite-furniture-home-total-width: 161px;
+$sprite-furniture-home-total-height: 136px;
+$sprite-furniture-home-image: '../img/sprite.png';
+$sprite-furniture-home: (34px, 78px, -34px, -78px, 24px, 24px, 161px, 136px, '../img/sprite.png', 'sprite-furniture_home', );
+$sprite-jobs-name: 'sprite-jobs';
+$sprite-jobs-x: 102px;
+$sprite-jobs-y: 112px;
+$sprite-jobs-offset-x: -102px;
+$sprite-jobs-offset-y: -112px;
+$sprite-jobs-width: 24px;
+$sprite-jobs-height: 24px;
+$sprite-jobs-total-width: 161px;
+$sprite-jobs-total-height: 136px;
+$sprite-jobs-image: '../img/sprite.png';
+$sprite-jobs: (102px, 112px, -102px, -112px, 24px, 24px, 161px, 136px, '../img/sprite.png', 'sprite-jobs', );
+$sprite-logo-name: 'sprite-logo';
+$sprite-logo-x: 0px;
+$sprite-logo-y: 0px;
+$sprite-logo-offset-x: 0px;
+$sprite-logo-offset-y: 0px;
+$sprite-logo-width: 161px;
+$sprite-logo-height: 34px;
+$sprite-logo-total-width: 161px;
+$sprite-logo-total-height: 136px;
+$sprite-logo-image: '../img/sprite.png';
+$sprite-logo: (0px, 0px, 0px, 0px, 161px, 34px, 161px, 136px, '../img/sprite.png', 'sprite-logo', );
+$sprite-other-name: 'sprite-other';
+$sprite-other-x: 136px;
+$sprite-other-y: 78px;
+$sprite-other-offset-x: -136px;
+$sprite-other-offset-y: -78px;
+$sprite-other-width: 24px;
+$sprite-other-height: 24px;
+$sprite-other-total-width: 161px;
+$sprite-other-total-height: 136px;
+$sprite-other-image: '../img/sprite.png';
+$sprite-other: (136px, 78px, -136px, -78px, 24px, 24px, 161px, 136px, '../img/sprite.png', 'sprite-other', );
+$sprite-phones-electronics-name: 'sprite-phones_electronics';
+$sprite-phones-electronics-x: 0px;
+$sprite-phones-electronics-y: 112px;
+$sprite-phones-electronics-offset-x: 0px;
+$sprite-phones-electronics-offset-y: -112px;
+$sprite-phones-electronics-width: 24px;
+$sprite-phones-electronics-height: 24px;
+$sprite-phones-electronics-total-width: 161px;
+$sprite-phones-electronics-total-height: 136px;
+$sprite-phones-electronics-image: '../img/sprite.png';
+$sprite-phones-electronics: (0px, 112px, 0px, -112px, 24px, 24px, 161px, 136px, '../img/sprite.png', 'sprite-phones_electronics', );
+$sprite-property-land-name: 'sprite-property_land';
+$sprite-property-land-x: 34px;
+$sprite-property-land-y: 112px;
+$sprite-property-land-offset-x: -34px;
+$sprite-property-land-offset-y: -112px;
+$sprite-property-land-width: 24px;
+$sprite-property-land-height: 24px;
+$sprite-property-land-total-width: 161px;
+$sprite-property-land-total-height: 136px;
+$sprite-property-land-image: '../img/sprite.png';
+$sprite-property-land: (34px, 112px, -34px, -112px, 24px, 24px, 161px, 136px, '../img/sprite.png', 'sprite-property_land', );
+$sprite-sports-bicycles-name: 'sprite-sports_bicycles';
+$sprite-sports-bicycles-x: 68px;
+$sprite-sports-bicycles-y: 112px;
+$sprite-sports-bicycles-offset-x: -68px;
+$sprite-sports-bicycles-offset-y: -112px;
+$sprite-sports-bicycles-width: 24px;
+$sprite-sports-bicycles-height: 24px;
+$sprite-sports-bicycles-total-width: 161px;
+$sprite-sports-bicycles-total-height: 136px;
+$sprite-sports-bicycles-image: '../img/sprite.png';
+$sprite-sports-bicycles: (68px, 112px, -68px, -112px, 24px, 24px, 161px, 136px, '../img/sprite.png', 'sprite-sports_bicycles', );
+$sprite-upload-name: 'sprite-upload';
+$sprite-upload-x: 0px;
+$sprite-upload-y: 44px;
+$sprite-upload-offset-x: 0px;
+$sprite-upload-offset-y: -44px;
+$sprite-upload-width: 30px;
+$sprite-upload-height: 24px;
+$sprite-upload-total-width: 161px;
+$sprite-upload-total-height: 136px;
+$sprite-upload-image: '../img/sprite.png';
+$sprite-upload: (0px, 44px, 0px, -44px, 30px, 24px, 161px, 136px, '../img/sprite.png', 'sprite-upload', );
+$sprite-all-2x-name: 'sprite-all@2x';
+$sprite-all-2x-x: 204px;
+$sprite-all-2x-y: 156px;
+$sprite-all-2x-offset-x: -204px;
+$sprite-all-2x-offset-y: -156px;
+$sprite-all-2x-width: 48px;
+$sprite-all-2x-height: 48px;
+$sprite-all-2x-total-width: 322px;
+$sprite-all-2x-total-height: 272px;
+$sprite-all-2x-image: '../img/sprite@2x.png';
+$sprite-all-2x: (204px, 156px, -204px, -156px, 48px, 48px, 322px, 272px, '../img/sprite@2x.png', 'sprite-all@2x', );
+$sprite-bicycle-2x-name: 'sprite-bicycle@2x';
+$sprite-bicycle-2x-x: 136px;
+$sprite-bicycle-2x-y: 156px;
+$sprite-bicycle-2x-offset-x: -136px;
+$sprite-bicycle-2x-offset-y: -156px;
+$sprite-bicycle-2x-width: 48px;
+$sprite-bicycle-2x-height: 48px;
+$sprite-bicycle-2x-total-width: 322px;
+$sprite-bicycle-2x-total-height: 272px;
+$sprite-bicycle-2x-image: '../img/sprite@2x.png';
+$sprite-bicycle-2x: (136px, 156px, -136px, -156px, 48px, 48px, 322px, 272px, '../img/sprite@2x.png', 'sprite-bicycle@2x', );
+$sprite-bikes-2x-name: 'sprite-bikes@2x';
+$sprite-bikes-2x-x: 80px;
+$sprite-bikes-2x-y: 88px;
+$sprite-bikes-2x-offset-x: -80px;
+$sprite-bikes-2x-offset-y: -88px;
+$sprite-bikes-2x-width: 48px;
+$sprite-bikes-2x-height: 48px;
+$sprite-bikes-2x-total-width: 322px;
+$sprite-bikes-2x-total-height: 272px;
+$sprite-bikes-2x-image: '../img/sprite@2x.png';
+$sprite-bikes-2x: (80px, 88px, -80px, -88px, 48px, 48px, 322px, 272px, '../img/sprite@2x.png', 'sprite-bikes@2x', );
+$sprite-cars-bikes-parts-2x-name: 'sprite-cars_bikes_parts@2x';
+$sprite-cars-bikes-parts-2x-x: 148px;
+$sprite-cars-bikes-parts-2x-y: 88px;
+$sprite-cars-bikes-parts-2x-offset-x: -148px;
+$sprite-cars-bikes-parts-2x-offset-y: -88px;
+$sprite-cars-bikes-parts-2x-width: 48px;
+$sprite-cars-bikes-parts-2x-height: 48px;
+$sprite-cars-bikes-parts-2x-total-width: 322px;
+$sprite-cars-bikes-parts-2x-total-height: 272px;
+$sprite-cars-bikes-parts-2x-image: '../img/sprite@2x.png';
+$sprite-cars-bikes-parts-2x: (148px, 88px, -148px, -88px, 48px, 48px, 322px, 272px, '../img/sprite@2x.png', 'sprite-cars_bikes_parts@2x', );
+$sprite-clothes-gifts-2x-name: 'sprite-clothes_gifts@2x';
+$sprite-clothes-gifts-2x-x: 216px;
+$sprite-clothes-gifts-2x-y: 88px;
+$sprite-clothes-gifts-2x-offset-x: -216px;
+$sprite-clothes-gifts-2x-offset-y: -88px;
+$sprite-clothes-gifts-2x-width: 48px;
+$sprite-clothes-gifts-2x-height: 48px;
+$sprite-clothes-gifts-2x-total-width: 322px;
+$sprite-clothes-gifts-2x-total-height: 272px;
+$sprite-clothes-gifts-2x-image: '../img/sprite@2x.png';
+$sprite-clothes-gifts-2x: (216px, 88px, -216px, -88px, 48px, 48px, 322px, 272px, '../img/sprite@2x.png', 'sprite-clothes_gifts@2x', );
+$sprite-food-animals-2x-name: 'sprite-food_animals@2x';
+$sprite-food-animals-2x-x: 0px;
+$sprite-food-animals-2x-y: 156px;
+$sprite-food-animals-2x-offset-x: 0px;
+$sprite-food-animals-2x-offset-y: -156px;
+$sprite-food-animals-2x-width: 48px;
+$sprite-food-animals-2x-height: 48px;
+$sprite-food-animals-2x-total-width: 322px;
+$sprite-food-animals-2x-total-height: 272px;
+$sprite-food-animals-2x-image: '../img/sprite@2x.png';
+$sprite-food-animals-2x: (0px, 156px, 0px, -156px, 48px, 48px, 322px, 272px, '../img/sprite@2x.png', 'sprite-food_animals@2x', );
+$sprite-furniture-home-2x-name: 'sprite-furniture_home@2x';
+$sprite-furniture-home-2x-x: 68px;
+$sprite-furniture-home-2x-y: 156px;
+$sprite-furniture-home-2x-offset-x: -68px;
+$sprite-furniture-home-2x-offset-y: -156px;
+$sprite-furniture-home-2x-width: 48px;
+$sprite-furniture-home-2x-height: 48px;
+$sprite-furniture-home-2x-total-width: 322px;
+$sprite-furniture-home-2x-total-height: 272px;
+$sprite-furniture-home-2x-image: '../img/sprite@2x.png';
+$sprite-furniture-home-2x: (68px, 156px, -68px, -156px, 48px, 48px, 322px, 272px, '../img/sprite@2x.png', 'sprite-furniture_home@2x', );
+$sprite-jobs-2x-name: 'sprite-jobs@2x';
+$sprite-jobs-2x-x: 204px;
+$sprite-jobs-2x-y: 224px;
+$sprite-jobs-2x-offset-x: -204px;
+$sprite-jobs-2x-offset-y: -224px;
+$sprite-jobs-2x-width: 48px;
+$sprite-jobs-2x-height: 48px;
+$sprite-jobs-2x-total-width: 322px;
+$sprite-jobs-2x-total-height: 272px;
+$sprite-jobs-2x-image: '../img/sprite@2x.png';
+$sprite-jobs-2x: (204px, 224px, -204px, -224px, 48px, 48px, 322px, 272px, '../img/sprite@2x.png', 'sprite-jobs@2x', );
+$sprite-logo-2x-name: 'sprite-logo@2x';
+$sprite-logo-2x-x: 0px;
+$sprite-logo-2x-y: 0px;
+$sprite-logo-2x-offset-x: 0px;
+$sprite-logo-2x-offset-y: 0px;
+$sprite-logo-2x-width: 322px;
+$sprite-logo-2x-height: 68px;
+$sprite-logo-2x-total-width: 322px;
+$sprite-logo-2x-total-height: 272px;
+$sprite-logo-2x-image: '../img/sprite@2x.png';
+$sprite-logo-2x: (0px, 0px, 0px, 0px, 322px, 68px, 322px, 272px, '../img/sprite@2x.png', 'sprite-logo@2x', );
+$sprite-other-2x-name: 'sprite-other@2x';
+$sprite-other-2x-x: 272px;
+$sprite-other-2x-y: 156px;
+$sprite-other-2x-offset-x: -272px;
+$sprite-other-2x-offset-y: -156px;
+$sprite-other-2x-width: 48px;
+$sprite-other-2x-height: 48px;
+$sprite-other-2x-total-width: 322px;
+$sprite-other-2x-total-height: 272px;
+$sprite-other-2x-image: '../img/sprite@2x.png';
+$sprite-other-2x: (272px, 156px, -272px, -156px, 48px, 48px, 322px, 272px, '../img/sprite@2x.png', 'sprite-other@2x', );
+$sprite-phones-electronics-2x-name: 'sprite-phones_electronics@2x';
+$sprite-phones-electronics-2x-x: 0px;
+$sprite-phones-electronics-2x-y: 224px;
+$sprite-phones-electronics-2x-offset-x: 0px;
+$sprite-phones-electronics-2x-offset-y: -224px;
+$sprite-phones-electronics-2x-width: 48px;
+$sprite-phones-electronics-2x-height: 48px;
+$sprite-phones-electronics-2x-total-width: 322px;
+$sprite-phones-electronics-2x-total-height: 272px;
+$sprite-phones-electronics-2x-image: '../img/sprite@2x.png';
+$sprite-phones-electronics-2x: (0px, 224px, 0px, -224px, 48px, 48px, 322px, 272px, '../img/sprite@2x.png', 'sprite-phones_electronics@2x', );
+$sprite-property-land-2x-name: 'sprite-property_land@2x';
+$sprite-property-land-2x-x: 68px;
+$sprite-property-land-2x-y: 224px;
+$sprite-property-land-2x-offset-x: -68px;
+$sprite-property-land-2x-offset-y: -224px;
+$sprite-property-land-2x-width: 48px;
+$sprite-property-land-2x-height: 48px;
+$sprite-property-land-2x-total-width: 322px;
+$sprite-property-land-2x-total-height: 272px;
+$sprite-property-land-2x-image: '../img/sprite@2x.png';
+$sprite-property-land-2x: (68px, 224px, -68px, -224px, 48px, 48px, 322px, 272px, '../img/sprite@2x.png', 'sprite-property_land@2x', );
+$sprite-sports-bicycles-2x-name: 'sprite-sports_bicycles@2x';
+$sprite-sports-bicycles-2x-x: 136px;
+$sprite-sports-bicycles-2x-y: 224px;
+$sprite-sports-bicycles-2x-offset-x: -136px;
+$sprite-sports-bicycles-2x-offset-y: -224px;
+$sprite-sports-bicycles-2x-width: 48px;
+$sprite-sports-bicycles-2x-height: 48px;
+$sprite-sports-bicycles-2x-total-width: 322px;
+$sprite-sports-bicycles-2x-total-height: 272px;
+$sprite-sports-bicycles-2x-image: '../img/sprite@2x.png';
+$sprite-sports-bicycles-2x: (136px, 224px, -136px, -224px, 48px, 48px, 322px, 272px, '../img/sprite@2x.png', 'sprite-sports_bicycles@2x', );
+$sprite-upload-2x-name: 'sprite-upload@2x';
+$sprite-upload-2x-x: 0px;
+$sprite-upload-2x-y: 88px;
+$sprite-upload-2x-offset-x: 0px;
+$sprite-upload-2x-offset-y: -88px;
+$sprite-upload-2x-width: 60px;
+$sprite-upload-2x-height: 48px;
+$sprite-upload-2x-total-width: 322px;
+$sprite-upload-2x-total-height: 272px;
+$sprite-upload-2x-image: '../img/sprite@2x.png';
+$sprite-upload-2x: (0px, 88px, 0px, -88px, 60px, 48px, 322px, 272px, '../img/sprite@2x.png', 'sprite-upload@2x', );
+$spritesheet-width: 161px;
+$spritesheet-height: 136px;
+$spritesheet-image: '../img/sprite.png';
+$spritesheet-sprites: ($sprite-all, $sprite-bicycle, $sprite-bikes, $sprite-cars-bikes-parts, $sprite-clothes-gifts, $sprite-food-animals, $sprite-furniture-home, $sprite-jobs, $sprite-logo, $sprite-other, $sprite-phones-electronics, $sprite-property-land, $sprite-sports-bicycles, $sprite-upload, );
+$spritesheet: (161px, 136px, '../img/sprite.png', $spritesheet-sprites, );
+$retina-spritesheet-width: 322px;
+$retina-spritesheet-height: 272px;
+$retina-spritesheet-image: '../img/sprite@2x.png';
+$retina-spritesheet-sprites: ($sprite-all-2x, $sprite-bicycle-2x, $sprite-bikes-2x, $sprite-cars-bikes-parts-2x, $sprite-clothes-gifts-2x, $sprite-food-animals-2x, $sprite-furniture-home-2x, $sprite-jobs-2x, $sprite-logo-2x, $sprite-other-2x, $sprite-phones-electronics-2x, $sprite-property-land-2x, $sprite-sports-bicycles-2x, $sprite-upload-2x, );
+$retina-spritesheet: (322px, 272px, '../img/sprite@2x.png', $retina-spritesheet-sprites, );
+
+// These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+//
+// The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
+$sprite-all-group-name: 'sprite-all';
+$sprite-all-group: ('sprite-all', $sprite-all, $sprite-all-2x, );
+$sprite-bicycle-group-name: 'sprite-bicycle';
+$sprite-bicycle-group: ('sprite-bicycle', $sprite-bicycle, $sprite-bicycle-2x, );
+$sprite-bikes-group-name: 'sprite-bikes';
+$sprite-bikes-group: ('sprite-bikes', $sprite-bikes, $sprite-bikes-2x, );
+$sprite-cars-bikes-parts-group-name: 'sprite-cars_bikes_parts';
+$sprite-cars-bikes-parts-group: ('sprite-cars_bikes_parts', $sprite-cars-bikes-parts, $sprite-cars-bikes-parts-2x, );
+$sprite-clothes-gifts-group-name: 'sprite-clothes_gifts';
+$sprite-clothes-gifts-group: ('sprite-clothes_gifts', $sprite-clothes-gifts, $sprite-clothes-gifts-2x, );
+$sprite-food-animals-group-name: 'sprite-food_animals';
+$sprite-food-animals-group: ('sprite-food_animals', $sprite-food-animals, $sprite-food-animals-2x, );
+$sprite-furniture-home-group-name: 'sprite-furniture_home';
+$sprite-furniture-home-group: ('sprite-furniture_home', $sprite-furniture-home, $sprite-furniture-home-2x, );
+$sprite-jobs-group-name: 'sprite-jobs';
+$sprite-jobs-group: ('sprite-jobs', $sprite-jobs, $sprite-jobs-2x, );
+$sprite-logo-group-name: 'sprite-logo';
+$sprite-logo-group: ('sprite-logo', $sprite-logo, $sprite-logo-2x, );
+$sprite-other-group-name: 'sprite-other';
+$sprite-other-group: ('sprite-other', $sprite-other, $sprite-other-2x, );
+$sprite-phones-electronics-group-name: 'sprite-phones_electronics';
+$sprite-phones-electronics-group: ('sprite-phones_electronics', $sprite-phones-electronics, $sprite-phones-electronics-2x, );
+$sprite-property-land-group-name: 'sprite-property_land';
+$sprite-property-land-group: ('sprite-property_land', $sprite-property-land, $sprite-property-land-2x, );
+$sprite-sports-bicycles-group-name: 'sprite-sports_bicycles';
+$sprite-sports-bicycles-group: ('sprite-sports_bicycles', $sprite-sports-bicycles, $sprite-sports-bicycles-2x, );
+$sprite-upload-group-name: 'sprite-upload';
+$sprite-upload-group: ('sprite-upload', $sprite-upload, $sprite-upload-2x, );
+$retina-groups: ($sprite-all-group, $sprite-bicycle-group, $sprite-bikes-group, $sprite-cars-bikes-parts-group, $sprite-clothes-gifts-group, $sprite-food-animals-group, $sprite-furniture-home-group, $sprite-jobs-group, $sprite-logo-group, $sprite-other-group, $sprite-phones-electronics-group, $sprite-property-land-group, $sprite-sports-bicycles-group, $sprite-upload-group, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `retina-sprite` mixin sets up rules and a media query for a sprite/retina sprite.
+//   It should be used with a "retina group" variable.
+//
+// The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+//
+// $icon-home-group: ('icon-home', $icon-home, $icon-home-2x, );
+//
+// .icon-home {
+//   @include retina-sprite($icon-home-group);
+// }
+@mixin sprite-background-size($sprite) {
+  $sprite-total-width: nth($sprite, 7);
+  $sprite-total-height: nth($sprite, 8);
+  background-size: $sprite-total-width $sprite-total-height;
+}
+
+@mixin retina-sprite($retina-group) {
+  $normal-sprite: nth($retina-group, 2);
+  $retina-sprite: nth($retina-group, 3);
+  @include sprite($normal-sprite);
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi) {
+    @include sprite-image($retina-sprite);
+    @include sprite-background-size($normal-sprite);
+  }
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+
+// The `retina-sprites` mixin generates a CSS rule and media query for retina groups
+//   This yields the same output as CSS retina template but can be overridden in SCSS
+//
+// @include retina-sprites($retina-groups);
+@mixin retina-sprites($retina-groups) {
+  @each $retina-group in $retina-groups {
+    $sprite-name: nth($retina-group, 1);
+    .#{$sprite-name} {
+      @include retina-sprite($retina-group);
+    }
+  }
+}

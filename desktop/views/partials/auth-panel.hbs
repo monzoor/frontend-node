@@ -1,0 +1,239 @@
+<div class="auth-panel overlay-content" id="authPanel">
+  <div class="auth-message alert alert-info hidden" data-flow="ad-insertion">{{__ "Almost done! Just login or create an account to post your ad."}}</div>
+  <div class="login_forgot_panel">
+    <div id="loginPanel">
+      <h2 class="panel--headline">{{__ 'Login'}}</h2>
+      <p class="panel--copy text--semi-gray mbs">{{__ 'Enter your mobile number and password'}}</p>
+      <img src="{{filerev '/img/spinner.gif'}}" width="32" height="32" class="loading hidden text--center">
+      <div id="loginAlert" class="alert alert-danger mbs hidden">
+        <div class="wrapper-icon">
+          <i class="icon-alert-error extra-large no-margin"></i>
+        </div>
+        <div class="content">
+          <span></span>
+        </div>
+      </div>
+
+      <form id="logIn" action="" method="post" autocomplete="off">
+        <div class="input-group">
+          <div class="input-group--items input-items--bg-white input-items--shadow">
+            <input class="input-item--input" type="number" placeholder="{{__ 'Your mobile number'}}" name="phone" value="{{form.phone}}">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <div class="input-group--items input-items--bg-white input-items--shadow">
+            <input class="input-item--input" type="password" placeholder="{{__ 'Password'}}" name="password">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--primary mbm">{{__ 'Login'}}</button>
+      </form>
+      <a href="" id="forgotPasswordLink" class="text--small">{{__ 'Forgot password?'}}</a>
+    </div>
+
+    <div id="forgotPasswordPanel" class="hidden">
+      <h2 class="panel--headline">{{__ 'Step 1: Phone number'}}</h2>
+      <p class="panel--copy text--semi-gray mbs">{{__ 'We will send you an SMS message with a verification code.'}}</p>
+      <img src="{{filerev '/img/spinner.gif'}}" width="32" height="32" class="loading hidden text--center">
+      <div id="forgotpassAlert" class="alert alert-danger mbs hidden">
+        <div class="wrapper-icon">
+          <i class="icon-alert-error extra-large no-margin"></i>
+        </div>
+        <div class="content">
+          <span></span>
+        </div>
+      </div>
+
+      <form id="forgotPassword" action="" method="post" autocomplete="off">
+        <div class="input-group">
+          <div class="input-group--items input-items--bg-white input-items--shadow">
+            <input class="input-item--input" type="number" placeholder="{{__ 'Your mobile number'}}" name="phone" value="{{form.phone}}">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--primary mrs">{{__ 'Send'}}</button>
+        <button id="backToLogin" class="btn btn--default mbm">{{__ 'Cancel'}}</button>
+
+      </form>
+    </div>
+
+    <div id="verificationPanel" class="hidden">
+      <h2 class="panel--headline">{{__ 'Step 2: Verification'}}</h2>
+      <p class="panel--copy text--semi-gray mbs">{{{__ "Please enter the code we sent you by SMS" }}}</p>
+      <img src="{{filerev '/img/spinner.gif'}}" width="32" height="32" class="loading hidden text--center">
+      <img class="sms-animation" src="{{filerev '/img/sending_sms.gif'}}">
+      
+      <div id="varificationCodeAlert" class="alert alert-danger mbs hidden">
+        <div class="wrapper-icon">
+          <i class="icon-alert-error extra-large no-margin"></i>
+        </div>
+        <div class="content">
+          <span></span>
+        </div>
+      </div>
+
+      <form id="verification" action="" method="post" autocomplete="off">
+        <div class="input-group">
+          <div class="input-group--items input-items--bg-white input-items--shadow">
+            <input class="input-item--input" type="number" placeholder="{{__ "Verification code"}}" name="otp" value="{{form.phone}}">
+          </div>
+        </div>
+
+        <p class="panel--copy text--semi-gray mbs">{{{__ "Sent to <strong id='phoneNumber'>+88%s</strong>. Didn't receive anything?" 123 }}} <a id="resendLogin" href="">{{__ "Send again"}}<i class="icon-loop-alt"></i></a></p>
+
+        <button type="submit" class="btn btn--primary mbm btn--block">{{__ 'Verify'}}</button>
+      </form>
+    </div>
+
+    <div id="resetPasswordPanel" class="hidden">
+      <h2 class="panel--headline">{{__ 'Step 3: New password'}}</h2>
+      <p class="text-center muted">
+       {{__ 'Thank you. Now choose a new password for your Ekhanei account.'}}
+      </p>
+      <img src="{{filerev '/img/spinner.gif'}}" width="32" height="32" alt="" class="loading hidden text--center">
+      <div id="resetPasswordAlert" class="alert alert-danger mbs hidden">
+        <div class="wrapper-icon">
+          <i class="icon-alert-error extra-large no-margin"></i>
+        </div>
+        <div class="content">
+          <span></span>
+        </div>
+      </div>
+
+      <form id="resetPassword" action="" method="post" autocomplete="off">
+        <div class="input-group">
+          <div class="input-group--items input-items--bg-white input-items--shadow">
+            <input name="password" class="input-item--input divider" type="password" placeholder="{{__ 'Choose a password'}}">
+            <input name="confirm_password" class="input-item--input" type="password" placeholder="{{__ 'Confirm password'}}">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--primary mbm">{{__ 'Done'}}</button>
+      </form>
+    </div>
+    <div id="verifiedPanel" class="hidden">
+      <h2 class="panel--headline">{{__ 'Verified'}}</h2>
+      <p class="panel--copy text--semi-gray mbs">{{__ 'Your number has been verified. Please login'}}</p>
+
+      <a href="" id="logInLink" class="btn btn--primary mbm">{{__ 'Login'}}</a>
+    </div>
+  </div>
+  <div class="signup">
+    <h2 class="panel--headline">{{__ 'Create an account'}}</h2>
+    <p class="panel--copy">{{__ 'It’s free and easy to sign up. We will send you an SMS verification code.'}}</p>
+    
+    <div class="signup__form">
+      <div class="reg">
+        <div id="regAlert" class="alert alert-danger mbs hidden">
+          <div class="wrapper-icon">
+            <i class="icon-alert-error extra-large no-margin"></i>
+          </div>
+          <div class="content">
+            <span></span>
+          </div>
+        </div>
+
+        <img src="{{filerev '/img/spinner.gif'}}" width="32" height="32" alt="" class="loading hidden text--left">
+        <form id="registrationFrom" action="" method="post">
+          <div class="input-group">
+            <div class="input-group--items input-items--bg-gray input-items--shadow">
+              <input name="name" class="input-item--input" type="text" placeholder="{{__ 'Your full name'}}">
+              <span id="name_error" class="input-item--message error hidden">This is message</span>
+            </div>
+          </div>
+
+
+          <div class="input-group">
+            <div class="input-group--items input-items--bg-gray input-items--shadow">
+              <div class="items_with_prefix">
+                <div class="number-prefix text--muted">+88</div>
+                <input name="phone" class="input-item--input input-item--bg-gray input-item--shadow" type="number" placeholder="{{__ 'Your mobile number'}}">
+                <span id="phone_error" class="input-item--message error hidden">This is message</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <div class="input-group--items input-items--bg-gray input-items--shadow">
+              <input name="password" class="input-item--input divider" type="password" placeholder="{{__ 'Choose a password'}}">
+              <input name="password_confirm" class="input-item--input" type="password" placeholder="{{__ 'Confirm password'}}">
+              <span id="password_error" class="input-item--message error hidden">This is message</span>
+            </div>
+          </div>
+
+          <label class="text--sub-headline seller-type--label">{{__ 'Who are you?'}}</label>
+
+          <div class="seller-type input-group">
+            <div class="input-group--items individual mbn">
+              <label><input type="radio" name="type" value="p"> <span>{{__ 'An Individual'}}</span></label>
+            </div>
+            <div class="input-group--items mbn">
+              <label><input type="radio" name="type" value="b"> <span>{{__ 'A Business'}}</span></label>
+            </div>
+            <div class="business-categories hidden select mts input-items--bg-gray input-items--shadow">
+              <select name="category" >
+                <option value="" selected="" disabled="">{{__ 'Select Category'}}</option>
+                {{#each ekhanei.businessCategories}}
+                  <option value="{{id}}">{{name}}</option>
+                {{/each}}
+              </select>
+            </div>
+            <span id="type_error" class="input-item--message error hidden">This is message</span>
+          </div>
+
+          <button type="submit" class="btn btn--primary">{{__ 'sign up'}}</button>
+        </form>
+      </div>
+
+      <div id="verificationPanelReg" class="hidden">
+        <h3 class="panel--headline mtn">{{__ 'Verification'}}</h3>
+        <p class="panel--copy text--semi-gray mbs">{{{__ "Please enter the code we sent you by SMS" }}}</p>
+        <img src="{{filerev '/img/spinner.gif'}}" width="32" height="32" class="loading hidden text--center">
+        <img class="sms-animation" src="{{filerev '/img/sending_sms.gif'}}">
+        <div id="verificationCodeAlertReg" class="alert alert-danger mbs hidden">
+          <div class="wrapper-icon">
+            <i class="icon-alert-error extra-large no-margin"></i>
+          </div>
+          <div class="content">
+            <span></span>
+          </div>
+        </div>
+
+        <form id="verificationReg" action="" method="post" autocomplete="off">
+          <div class="input-group">
+            <div class="input-group--items input-items--bg-gray input-items--shadow">
+              <input class="input-item--input" type="number" placeholder="{{__ "Verification code"}}" name="otp" value="{{form.phone}}">
+            </div>
+          </div>
+
+          <p class="panel--copy text--semi-gray mbs">{{{__ "Sent to <strong id='phoneNumberReg'>+88%s</strong>. Didn't receive anything?" unverifiedPhone }}} <a href="" id="resendReg">{{__ "Send again"}}<i class="icon-loop-alt"></i></a></p>
+
+          <button type="submit" class="btn btn--primary mbm btn--block">{{__ 'Verify'}}</button>
+
+        </form>
+      </div>
+    </div>
+
+    <div class="signup__information">
+      <div class="info__general">
+        <div class="mobile"></div>
+        <p class="info--headline mtm">{{__ 'New accounts on Ekhanei are...'}}</p>
+        <ul>
+          <li class="info-list"><i class="icon-ok text--green"></i> {{__ 'More secure'}}</li>
+          <li class="info-list"><i class="icon-ok text--green"></i> {{__ 'Much simpler'}}</li>
+          <li class="info-list"><i class="icon-ok text--green"></i> {{__ 'Faster'}}</li>
+        </ul>
+      </div>
+      <div class="info__business hidden">
+        <p class="mbn">{{__ 'Business accounts are only allowed to post ads in the following categories:'}}</p>
+        <ul class="businiess-category-filter__options">
+          {{#each ekhanei.businessCategories}}
+          <li><div class="icon--{{icon}}"></div> <span>{{../__ name}}</span></li> 
+          {{/each}}
+        </ul>
+        <p class="mbn">{{__ 'All other categories are currently open to invididual sellers only.'}}</p>
+      </div>
+    </div>
+  </div>
+</div>

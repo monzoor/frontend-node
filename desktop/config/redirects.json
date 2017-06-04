@@ -1,0 +1,278 @@
+[
+  {
+    "old": "/ai(/?)$",
+    "new": "/"
+  },
+  {
+    "old": "/account/create(/?)$",
+    "new": "/login-signup"
+  },
+  {
+    "old": "/account/login(/?)$",
+    "new": "/login-signup"
+  },
+  {
+    "old": "/customer-service(/?)$",
+    "new": "/contact"
+  },
+  {
+    "old": "/about",
+    "new": "/legal"
+  },
+  {
+    "old": "/rules",
+    "new": "/legal"
+  },
+  {
+    "old": "/list",
+    "new": "/"
+  },
+  {
+    "old": "/list?q=*",
+    "new": "/?q=*"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/other",
+    "new": "/?cat=9"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/cars",
+    "new": "/?cat=1"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/motorcycles",
+    "new": "/?cat=6"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/bicycles",
+    "new": "/?cat=6"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/trucks-buses-and-other-vehicles",
+    "new": "/?cat=9"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/parts-and-accessories",
+    "new": "/?cat=1"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/mobiles/for-sale*",
+    "new": "/?cat=3"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/tablets",
+    "new": "/?cat=3"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/laptops",
+    "new": "/?cat=3"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/desktop-computers",
+    "new": "/?cat=3"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/accessories-and-software",
+    "new": "/?cat=9"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/consoles-and-games",
+    "new": "/?cat=3"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/tv-audio-and-video",
+    "new": "/?cat=3"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/photo-and-video-cameras",
+    "new": "/?cat=3"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/other-electronics",
+    "new": "/?cat=9"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/clothing",
+    "new": "/?cat=2"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/bags-and-shoes",
+    "new": "/?cat=2"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/watches-and-jewellery",
+    "new": "/?cat=2"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/other-accesories",
+    "new": "/?cat=6"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/childrens-clothing",
+    "new": "/?cat=2"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/childrens-toys-and-equipment",
+    "new": "/?cat=2"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/furniture/for-sale*",
+    "new": "/?cat=5"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/fridge-and-home-appliances",
+    "new": "/?cat=5"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/power-and-ac",
+    "new": "/?cat=9"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/decoration-art-and-textiles",
+    "new": "/?cat=9"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/other-home-and-living",
+    "new": "/?cat=9"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/sports-and-outdoor-equipment",
+    "new": "/?cat=8"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/pets",
+    "new": "/?cat=8"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/hobby-items-and-collectibles",
+    "new": "/?cat=8"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/music-movies-books-and-magazines",
+    "new": "/?cat=9"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/musical-instruments",
+    "new": "/?cat=8"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/tickets-tours-and-holidays",
+    "new": "/?cat=9"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/apartments/for-sale*",
+    "new": "/?cat=4"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/houses",
+    "new": "/?cat=4"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/rooms",
+    "new": "/?cat=9"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/offices-shops-and-commercial-property",
+    "new": "/?cat=9"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/land",
+    "new": "/?cat=9"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/other-property",
+    "new": "/?cat=9"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/job-vacancies/for-sale*",
+    "new": "/?cat=7"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/jobs-and-services/for-sale*",
+    "new": "/?cat=7"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/professional-services",
+    "new": "/?cat=7"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/tuition",
+    "new": "/?cat=7"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/professional-and-business-equipment",
+    "new": "/?cat=9"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/agriculture",
+    "new": "/?cat=9"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/food",
+    "new": "/?cat=9"
+  },
+  {
+    "old": "/(en|bn)/dhaka(/?)$",
+    "new": "/"
+  },
+  {
+    "old": "/(en|bn)/sylhet(/?)$",
+    "new": "/"
+  },
+  {
+    "old": "/(en|bn)/rajshahi(/?)$",
+    "new": "/"
+  },
+  {
+    "old": "/(en|bn)/barisal(/?)$",
+    "new": "/"
+  },
+  {
+    "old": "/(en|bn)/chittagong(/?)$",
+    "new": "/"
+  },
+  {
+    "old": "/(en|bn)/khulna(/?)$",
+    "new": "/"
+  },
+  {
+    "old": "/(en|bn)/rangpur(/?)$",
+    "new": "/"
+  },
+  {
+    "old": "/(en|bn)/dhaka-city(/?)$",
+    "new": "/"
+  },
+  {
+    "old": "/(en|bn)/sylhet-city(/?)$",
+    "new": "/"
+  },
+  {
+    "old": "/(en|bn)/rajshahi-city(/?)$",
+    "new": "/"
+  },
+  {
+    "old": "/(en|bn)/barisal-city(/?)$",
+    "new": "/"
+  },
+  {
+    "old": "/(en|bn)/chittagong-city(/?)$",
+    "new": "/"
+  },
+  {
+    "old": "/(en|bn)/khulna-city(/?)$",
+    "new": "/"
+  },
+  {
+    "old": "/(en|bn)/rangpur-city(/?)$",
+    "new": "/"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/for-sale(/?)$",
+    "new": "/"
+  },
+  {
+    "old": "/(en|bn)/bangladesh/*",
+    "new": "/"
+  }
+]

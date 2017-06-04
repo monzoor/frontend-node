@@ -1,0 +1,57 @@
+.alert {
+  width: 100%;
+  padding: 10px;
+  // margin-bottom: 15px;
+  @include cf();
+  
+  .wrapper-icon {
+    @include column(0.8/6, $gutter: 0);
+  }
+  .content {
+    width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0.2em 0 0 0;
+    font-size: 0.9em;
+    line-height: 1.4em;
+  }
+}
+
+// When the header is joined the alert should sit right at
+// the top and cover the gutters
+.alert-joined {
+  width: auto;
+  padding: 10px 15px;
+}
+
+// Colors
+
+.alert-danger {
+  background-color: lighten($brand-danger, 42%);
+  color: $brand-danger;
+}
+
+.alert-info {
+  background-color: lighten($brand-blue, 57%);
+  color: $brand-blue;
+}
+
+.alert-success {
+  background-color: lighten($brand-green, 45%);
+  color: $brand-green;
+}
+
+.alert-confirmation {
+  background-color: $white;
+  color: $brand-green;
+  margin-top: 15px;
+  .content {
+    color: $text-color;
+    >p {
+      margin: 0;
+    }
+  }
+}

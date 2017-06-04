@@ -1,0 +1,150 @@
+.top {
+  background-color: $top-color;
+  padding: 15px 0;
+  overflow: hidden;
+
+  /* Search bar */
+  .search {
+    $height: 36px;
+    $padding: 20px;
+
+    width: $container-width-sm;
+    background: $white;
+    margin: 0 auto;
+    border-radius: 100px;
+    box-shadow: 2px 2px 0 rgba(0,0,0,.1);
+    padding: 0 $padding;
+
+    form {
+      position: relative;
+      width: $container-width-sm - $padding;
+    }
+
+    input {
+      border: 0;
+      padding: 0;
+      height: $height;
+      width: 95%;
+    }
+    &.active input {
+      width: 68%;
+    }
+
+    &__actions {
+      $size: $height - 4px;
+
+      position: absolute;
+      top: ($height - $size) / 2;
+      right: ($height - $size) / 2;
+
+      button {
+        height: $size;
+        width: 110px;
+        color: $white;
+        background-color: $brand-primary;
+        border: 0;
+        border-radius: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        transition: .3s width ease-in-out;
+
+        i, .text {
+          vertical-align: top;
+          margin: 0px 2px 0 1px;
+        }
+
+        .text {
+          font-weight: bold;
+          text-transform: uppercase;
+          display: inline-block;
+        }
+      }
+
+      &__clear {
+        font-size: .9em;
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+
+    // Search tip, seen by users the first time they search
+    &__tip {
+      $available-width: $container-width-sm - ($padding*2);
+      $padding: 10px;
+      $bg: $white;
+      $arrow-size: 8px;
+
+      position: absolute;
+      z-index: 20;
+      width: $available-width;
+      background-color: $white;
+      margin-top: 13px;
+      border-radius: 3px;
+      box-shadow: $elevated-shadow;
+
+      h2 {
+        padding: $padding;
+        margin: 0;
+        font-size: 1.2em;
+        border-radius: 3px 3px 0 0;
+        border-bottom: 1px solid $gray-lighter;
+      }
+
+      .content {
+        padding: $padding;
+
+        .example {
+          background-color: lighten($brand-blue, 60%);
+          padding: $padding;
+
+          h3 {
+            font-size: .9em;
+            text-transform: uppercase;
+            margin: 0 0 .5em 0;
+          }
+
+          ul {
+            padding-left: 20px;
+
+            li {
+              &::before { content: '\201C'; }
+              &::after { content: '\201D'; }
+
+              font-style: italic;
+            }
+          }
+        }
+      }
+
+      .close {
+        position: absolute;
+        top: $padding;
+        right: $padding;
+        background: none;
+        border: none;
+        padding: 0;
+      }
+
+      // Arrow
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -$arrow-size;
+        left: $available-width / 12;
+        width: 0px;
+        height: 0px;
+        border-width: 0 $arrow-size $arrow-size $arrow-size;
+        border-style: solid;
+        border-color: transparent transparent $bg transparent;
+      }
+    }
+  }
+
+  /* Breadcrumbs */
+  &__breadcrumbs {
+    a, span, i {
+      color: $top-text-color;
+    }
+  }
+}

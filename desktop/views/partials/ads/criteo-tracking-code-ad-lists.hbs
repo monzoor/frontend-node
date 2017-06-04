@@ -1,0 +1,21 @@
+{{#if loadCriteo}}
+  {{!-- If there is category, list all ad id --}}
+  <script type="text/javascript">
+    window.criteo_q.push(
+      { event: "setAccount", account: 35670 },
+      { event: "setCustomerId", id: "{{loggedIn.phoneNumberHashed}}" },
+      { event: "setSiteType", type: "d" },
+      { event: "viewList", item: [{{{json ads.[0].id}}}, {{{json ads.[1].id}}}, {{{json ads.[2].id}}}] }
+    );
+  </script>
+  {{else}}
+  {{!-- Home page only --}}
+  <script type="text/javascript">
+    window.criteo_q.push(
+      { event: "setAccount", account: 35670 },
+      { event: "setCustomerId", id: "{{loggedIn.phoneNumberHashed}}" },
+      { event: "setSiteType", type: "d" },
+      { event: "viewHome" }
+    );
+  </script>
+{{/if}}

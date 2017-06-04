@@ -1,0 +1,23 @@
+.verified {
+  color: $white;
+  position: relative;
+  display: inline-block;
+  &__icon {
+    background-color: #56a84d;
+    @include border-radius(50% 0 0 50%);
+    font-size: 18px;
+    position: absolute;
+    left: -15px;
+    top: 0px;
+    &:before {
+      margin-left: 1px;
+    }
+  }
+  &__text {
+    @include border-radius(0 2px 2px 0);
+    background-color: $brand-green;
+    padding: 0px 10px 0px;
+    font-size: 12px;
+    display: block;
+  }
+}

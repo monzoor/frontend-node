@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{lang}}" dir="{{lang_dir}}">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{title}} | {{__ "Ekhanei"}}</title>
+    <link rel="icon" type="image/png" href="{{filerev '/img/favicon.png'}}">
+    <link rel="stylesheet" href="{{filerev '/css/style.css'}}">
+    {{> opengraph-tags}}
+    {{> ga-tracking-code}}
+    {{!-- criteo tracking code --}}
+    <script type="text/javascript" src="//static.criteo.net/js/ld/ld.js" async="true"></script>
+    <script type="text/javascript">
+      window.criteo_q = window.criteo_q || [];
+    </script>
+  </head>
+  <body>
+    {{> header}}
+
+    {{> alerts}}
+    {{> unverified-info-message}}
+    
+    {{{body}}}
+    {{> footer}}
+
+    {{#unless loggedIn}}
+      <div class="overlay hidden" id="authOverlay">
+        {{> auth-panel }}
+      </div>
+    {{/unless}}
+
+    <script>var Ekhanei = {{{json ekhanei}}};</script>
+    <script src="{{filerev '/js/main.js'}}"></script>
+    {{#each scripts}}
+    <script src="{{filerev this}}"></script>
+    {{/each}}
+  </body>
+</html>

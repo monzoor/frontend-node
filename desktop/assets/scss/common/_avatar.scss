@@ -1,0 +1,35 @@
+.avatar {
+  overflow: hidden;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  position: relative;
+  @include border-radius(50%);
+  border: 2px solid rgba(0,1,1, .2);
+  
+  &__img {
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  &--xl {
+    width: 120px;
+    height: 120px;
+  }
+
+  &--xsm {
+    height: 25px;
+    width: 25px;
+  }
+
+  &--sm {
+    height: 45px;
+    width: 45px;
+  }
+  
+  &--md {
+    width: 75px;
+    height: 75px;
+  }
+}

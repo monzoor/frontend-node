@@ -1,0 +1,17 @@
+<li class="inbox{{#unless link}} hidden{{/unless}}">
+  <a href="{{link}}" class="conversation-link" id="conversationLink{{@key}}">
+    <div class="inbox__meta-img">
+      <div class="inbox__meta-img--product_img">
+        <img class="item-img" src="{{#if link}}{{@root.imageBaseUrl}}/image/item/{{ad.id}}/square{{/if}}" alt="">
+      </div>
+      <div class="avatar avatar--xsm inbox__meta-img--avatar">
+        <img class="avatar__img avatar-img" src="{{@root.imageBaseUrl}}{{lastMessage.avatar}}">
+      </div>
+    </div>
+    <div class="inbox__summary">
+      <p class="text--dark-gray text--truncate text--small inbox__summary--product_title"><strong class="ad-title">{{ad.title}}</strong></p>
+      <p class="text--muted inbox__summary--send_time last-message-time">{{lastMessage.time}}</p>
+      <p class="text--muted text--truncate text--small  inbox__summary--message last-message">{{lastMessage.sender}} : {{lastMessage.message}}</p>
+    </div>
+  </a>
+</li>

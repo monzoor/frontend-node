@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+// Compass library
+@import "compass/css3";
+
+body {
+  /* This should be the only place we set the font size in
+   * pixels. Every other font size should be relative to 
+   * this (use 'em' units) */
+  font-size: $font-size-base;
+  font-family: $font-family-sans-serif;
+  background-color: $body-bg;
+  line-height: 1.4em;
+
+  // To facilitate consistent footer positioning
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 80px;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reset */
+* li {
+  list-style: none;
+}
+
+* ul {
+  margin: 0;
+  padding: 0;
+}
+
+* img {
+  display: block;
+}
+
+input, a, button, textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+button, a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+/* Containers */
+[class^=container] {
+  margin: 0 auto;
+}
+
+.container {
+  width: $container-width;
+  margin: 0 auto;
+}
+
+.container-sm {
+  width: $container-width-sm;
+  margin: 0 auto;
+}
+
+.panel {
+  background-color: $white;
+  padding: 10px 10px 5px 10px;
+  box-shadow: $panel-shadow;
+
+  &-dialog {
+    width: 400px;
+    margin: 0 auto;
+  }
+  &-dialog--big {
+    width: 600px;
+    margin: 0 auto;
+  }
+}
+

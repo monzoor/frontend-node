@@ -1,0 +1,101 @@
+<header class="header {{#if disableAuthOverlay}}header--login-signup{{/if}}">
+  <div class="container">
+    <a href="/" class="header__logo">Ekhanei</a>
+    <ul class="header-nav">
+      {{#if loggedIn}}
+      <li class="header-nav__item header-dropdown">
+        <a class="header-nav__link handle" href="#">
+          <img src="{{imageBaseUrl}}/image/avatar/{{#if loggedIn.avatar}}{{loggedIn.avatar}}{{else}}default{{/if}}/thumb" class="avatar avatar--xsm header-nav__link--avatar" alt=""> {{loggedIn.name}} <i class="icon-angle-down"></i>
+        </a>
+        <div class="header-nav__sub-items submenu">
+          <div class="triangle-with-shadow"></div>
+          <ul>
+            <li class="sub-item"><a class="sub-item__link" href="/profile/me"><i class="icon-user"></i>{{__ "My Profile"}}</a></li>
+            <li class="sub-item"><a class="sub-item__link" href="/messages"><i class="icon-mail"></i>{{__ "Messages"}}</a></li>
+            <li class="sub-item"><a class="sub-item__link" href="/dashboard"><i class="icon-list-alt"></i>{{__ "My Ads"}}</a></li>
+            <li class="sub-item"><a class="sub-item__link" href="/logout"><i class="icon-power"></i>{{__ "Logout"}}</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="header-nav__item header-dropdown">
+        <a class="header-nav__link handle" href="{{#if latestMessages}}#{{else}}/messages{{/if}}">
+          <i class="icon-mail"></i>
+          {{#if latestMessages}}<i class="icon-angle-down"></i>{{/if}}
+        </a>
+        {{#if latestMessages}}
+        <div class="header-nav__sub-items--messages submenu">
+          <div class="triangle-with-shadow"></div>
+          <ul>
+            {{#each latestMessages}}
+            <li class="sub-item">
+              <a class="sub-item__link" href="{{link}}">
+                <div class="inbox__product">
+                  <img src="/image/item/{{ad.id}}/square" width="45" height="45" />
+                </div>
+                <div class="inbox__summary">
+                  <p class="inbox__summary--headline text--truncate text--dark-gray">{{ad.title}}</p>
+                  <p class="inbox__summary--message text--line-clamp text--dark-gray">{{lastMessage.message}}</p>
+                </div>
+                <div class="inbox__sender text--right">
+                  <p class="text--muted"><small>{{lastMessage.time}}</small></p>
+                  <img src="{{lastMessage.avatar}}" class="avatar avatar--xsm" alt="">
+                </div>
+              </a>
+            </li>
+            {{/each}}
+            <a href="/messages" class="all text--center">{{__ "VIEW ALL MESSAGES"}} <i class="icon-right"></i></a>
+          </ul>
+        </div>
+        {{/if}}
+      </li>
+      
+        <li class="header-nav__item header-dropdown">
+          <a class="header-nav__link handle" href="#">
+            {{#if unreadNotifications}}<span class="header-nav__link--message-notification">{{unreadNotifications}}</span>{{/if}}
+            <i class="icon-globe"></i>
+            <i class="icon-angle-down"></i>
+          </a>
+          
+          <div class="header-nav__sub-items--messages submenu">
+            <div class="triangle-with-shadow"></div>
+            <ul class="notification-wrapper--height {{#compare notifications.length 4 operator=">="}}fixed{{/compare}}">
+              {{#if notifications}}
+                {{#each notifications}}
+                  <li class="sub-item ">
+                    <a class="sub-item__link {{#if unRead}}active{{/if}}" href="{{url}}">
+                      {{#if thumb}}
+                        <div class="notifications__product">
+                          <img src="{{@root.imageBaseUr}}/image/{{../thumb}}/square" width="45" height="45" />
+                        </div>
+                      {{/if}}
+                      <div class="notifications__summary {{#unless thumb}}full{{/unless}}">
+                        <p class="notifications__summary--headline text--dark-gray">{{{message}}}</p>
+                        <p class="text--muted mbn"><small>{{date}}</small></p>
+                      </div>
+                    </a>
+                  </li>
+                {{/each}}
+                {{else}}
+                <li class="sub-item ">
+                  <div class="sub-item__link">
+                    <div class="notifications__summary full">
+                      <p class="notifications__summary--headline text--dark-gray"><strong>{{__ 'No notifications'}}</strong></p>
+                      <p class="notifications__summary--headline text--dark-gray">{{__ "Selling on ekhanei is fun and easy! Experience the fun of selling the unused and earn some extra cash!!"}}</p>
+                    </div>
+                  </div>
+                </li>
+              {{/if}}
+            </ul>
+          </div>
+          
+        </li>
+      
+      {{else}}
+        {{#unless disableAuthOverlay}}
+          <li class="header-nav__item"><a class="header-nav__link" href="/login-signup" data-action="login-signup"><i class="icon-login"></i> Login</a></li>
+          <li class="header-nav__item"><a class="header-nav__link" href="/login-signup" data-action="login-signup"><i class="icon-user"></i> Create Account</a></li>
+        {{/unless}}
+      {{/if}}      
+    </ul>
+  </div>
+</header>

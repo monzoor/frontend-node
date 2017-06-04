@@ -1,0 +1,13 @@
+.DS_Store
+node_modules/
+public/
+logs/*
+!logs/.placeholder
+language/*
+.sass-cache
+.tmp
+tmp
+bower_components
+.idea/*
+# Env vars
+.env

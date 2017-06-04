@@ -1,0 +1,40 @@
+{{#each currentCategory.filters}}
+  {{#if multiple_select}}
+    {{#if parent}}
+      <script type="text/template" id="filter-{{slug}}">
+        <div class="select-multiple activated">
+          <div class="select-multiple--headline">
+            {{@root.__ 'Select '}} {{label}}
+          </div>
+          <ul class="select-multiple--options" id="multipleOptions">
+            {{#each filter_options}}
+              <li>
+                <label>
+                  <input type="checkbox" id="{{../slug}}-ids-{{id}}" name="{{../slug}}-ids" value="{{id}}">
+                  <span class="text--normal">{{title}}</span>
+                </label>
+              </li>
+            {{/each}}
+          </ul>
+          <div class="select-multiple--selected">
+            <ul></ul>
+          </div>
+        </div>
+      </script>
+    {{/if}}
+    {{else}}
+      <li>
+        <div class="form-group select multiple">
+          <select name="{{slug}}-id" id="{{slug}}" class="form-field">
+            <option selected="" disabled="" value="">{{@root.__ 'Select '}} {{label}}</option>
+            {{#each filter_options}}
+              <option value="{{id}}" {{#if child_slug}}data-child="filter-{{child_slug}}"{{/if}}>{{title}}</option>
+            {{/each}}
+            <option value="">{{@root.__ 'Any Gender'}}</option>
+          </select>
+        </div>
+      </li>
+  {{/if}}
+
+{{/each}}
+<li id="showMetafilterss"></li>

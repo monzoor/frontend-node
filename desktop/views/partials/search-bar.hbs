@@ -1,0 +1,24 @@
+<div class="search" id="searchBar">
+  <form action="/" method="get" name="search" autocomplete="off">
+    <input type="search" name="q" placeholder="What are you looking for? Where?" value="{{searchQuery}}">
+    {{#if category.id}}<input type="hidden" name="cat" value="{{category.id}}">{{/if}}
+    <div class="search__actions">
+      {{#if searchQuery}}<a href="#" data-action="clear" class="search__actions__clear">{{__ "Clear search"}}</a>{{/if}}
+      <button type="submit"><i class="icon-search"></i> <span class="text">{{__ 'Search'}}</span></button>
+    </div>
+  </form>
+  <div class="search__tip hidden">
+    <h2>{{__ "A quick tip..."}}</h2>
+    <div class="content">
+      <p>{{__ "Our new, smarter search allows you to search by name, location, brand and much more."}}</p>
+      <div class="example">
+        <h3>{{__ "For example:"}}</h3>
+        <ul class="examples">
+          <li><a href="/?q=Washing+machine+in+Gulshan" title="{{__ "Search for this"}}">{{__ "Washing machine in Gulshan"}}</a></li>
+          <li><a href="/?q=Samsung+TV+in+Badda" title="{{__ "Search for this"}}">{{__ "Samsung TV in Badda"}}</a></li>
+        </ul>
+      </div>
+    </div>
+    <button class="close" title="{{__ "Don't show again"}}"><i class="icon-cancel"></i></button>
+  </div>
+</div>

@@ -1,0 +1,165 @@
+<section id="postAdForm" class="post-ad-panel panel mtm closed">
+  <form id="adInsertForm" action="/post-ad" method="post" autocomplete="off" enctype="multipart/form-data">
+    <div class="row">
+      <div class="description">
+        <textarea tabindex="1" name="description">{{form.description}}</textarea>
+
+        <div class="placeholder{{#if form.description}} hidden{{/if}}">
+          <span>{{__ 'Post a new ad'}}</span>
+          <small>{{__ 'Describe what you are selling...'}}</small>
+        </div>
+        {{#if errors.description}}<span class="error">{{errors.description}}</span>{{/if}}
+      </div>
+      <div class="upload-photos">
+        <label>{{__ 'Add photos (maximum 3)'}}</label>
+        <div class="photos">
+          <div class="photo">
+            <label class="upload">
+              <i class="icon"></i>
+              <input type="file" name="photo" accept="image/*">
+            </label>
+            <div class="preview">
+              <button class="cancel"><i class="icon-cancel"></i></button>
+            </div>
+          </div>
+
+          <div class="photo">
+            <label class="upload">
+              <i class="icon"></i>
+              <input type="file" name="photo" accept="image/*">
+            </label>
+            <div class="preview">
+              <button class="cancel"><i class="icon-cancel"></i></button>
+            </div>
+          </div>
+
+          <div class="photo">
+            <label class="upload">
+              <i class="icon"></i>
+              <input type="file" name="photo" accept="image/*">
+            </label>
+            <div class="preview">
+              <button class="cancel"><i class="icon-cancel"></i></button>
+            </div>
+          </div>
+        </div>
+        {{#if errors.photos}}<span class="error">{{errors.photos}}</span>{{/if}}
+      </div>
+    </div>
+    <div class="meta">
+      <div class="field price">
+        <div class="addon">৳</div>
+        <input type="text" tabindex="2" placeholder="{{__ "Price (taka)"}}" name="price" value="{{form.price}}">
+        {{#if errors.price}}<span class="error">{{errors.price}}</span>{{/if}}
+      </div>
+      <div class="field location">
+        <div class="addon"><i class="icon-location"></i></div>
+        <input type="text" tabindex="3" placeholder="{{__ "Example: Gulshan, Dhaka..."}}" name="address" value="{{form.address}}{{#unless form.address}}{{location}}{{/unless}}">
+        {{#if errors.address}}<span class="error">{{errors.address}}</span>{{/if}}
+      </div>
+      <div class="field category">
+        <div class="select">
+          <select name="category" id="category" class="form-field">
+            <option disabled {{#unless form.category}}selected{{/unless}}>{{__ "Select a category"}}</option>
+            {{#each aiCategories}}
+              <option value="{{id}}" {{setSelect ../form.category id}}>{{name}}</option>
+            {{/each}}
+          </select>
+          {{#if errors.category}}<span class="error">{{errors.category}}</span>{{/if}}
+        </div>
+      </div>
+      <div id="metaFields"></div>
+    </div>
+    <div class="row actions">
+      <button type="submit" class="btn btn--primary">{{__ 'Post Ad'}}</button>
+    </div>
+  </form>
+  {{#each categories}}
+    {{#if filters}}
+      <script type="text/template" id="MetaFiledsForCat{{id}}">
+        <div class="row">
+          <div class="row meta--extend {{#if @root.errors.price}}price_error{{/if}}">
+            <div class="icon--{{icon}} mrs"></div> 
+            <p>
+              <strong>{{@root.__ "Tell us more about your item"}}</strong>
+            </p>
+            <div class="fields">
+              {{#each filters}}
+                  {{#unless parent}}
+                    {{#ifEqual type "select"}}
+                      <div class="field {{type}}" id="{{slug}}">
+                        <div class="select">
+                          <select name="filters[{{slug}}]" class="form-field parent">
+                            <option disabled selected>{{@root.__ 'Select'}} {{label}}</option>
+                            {{#each filter_options}}
+                              <option {{#unless ../parent}} data-child="{{../child_slug}}" {{/unless}} {{#if @root.form.filters}}{{#each @root.form.filters}}{{#ifEqual @key ../../../slug}}{{setSelect this ../../id}}{{/ifEqual}}{{/each}}{{/if}} value='{{id}}'>{{title}}</option>
+                            {{/each}}
+                          </select>
+                          {{#if @root.errors.filters}}<span class="error">{{@root.__ 'This field is required'}}</span>{{/if}}
+                        </div>
+                      </div>
+                    <div id="showChildMetaFilters"></div>
+                    {{/ifEqual}}
+                  {{/unless}}
+
+                  {{#ifEqual type "number"}}
+                    <div class="field {{type}}" id="{{slug}}">
+                      {{#if unit}}<div class="addon">{{unit}}</div>{{/if}}
+                      <input type="number" placeholder="{{label}}" name="filters[{{slug}}]" value="{{#if @root.form.filters}}{{#each @root.form.filters}}{{#ifEqual @key ../../../slug}}{{{this}}}{{/ifEqual}}{{/each}}{{/if}}">
+                      {{#if @root.errors.filters}}<span class="error">{{@root.__ 'This field is required'}}</span>{{/if}}
+                    </div>
+                  {{/ifEqual}}
+
+                  {{#ifEqual type "text"}}
+                    <div class="field {{type}}" id="{{slug}}">
+                      {{#if unit}}<div class="addon">{{unit}}</div>{{/if}}
+                      <input type="text" placeholder="{{label}}" name="filters[{{slug}}]" value="{{#if @root.form.filters}}{{#each @root.form.filters}}{{#ifEqual @key ../../../slug}}{{{this}}}{{/ifEqual}}{{/each}}{{/if}}">
+                      {{#if @root.errors.filters}}<span class="error">{{@root.__ 'This field is required'}}</span>{{/if}}
+                    </div>
+                  {{/ifEqual}}
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </script>
+    {{/if}}
+  {{/each}}
+
+  {{#each categories}}
+    {{#if filters}}
+      {{#each filters}}
+        {{#ifEqual type "select"}}
+          {{#if parent}}
+            <script type="text/template" id="{{slug}}">
+              <div class="field {{type}}" id="{{slug}}">
+                <div class="select">
+                  <select name="filters[{{slug}}]" class="form-field {{#unless parent}}parent{{/unless}}">
+                    <option disabled selected>{{@root.__ 'Select'}} {{label}}</option>
+                    {{#each filter_options}}
+                      <option {{#unless ../parent}} data-child="{{../child_slug}}" {{/unless}} {{#if @root.form.filters}}{{#each @root.form.filters}}{{#ifEqual @key ../../../slug}}{{setSelect this ../../id}}{{/ifEqual}}{{/each}}{{/if}} value='{{id}}'>{{title}}</option>
+                    {{/each}}
+                  </select>
+                  {{#if @root.errors.filters}}<span class="error">{{@root.__ 'This field is required'}}</span>{{/if}}
+                </div>
+              </div>
+            </script>
+          {{/if}}
+        {{/ifEqual}}
+      {{/each}}
+    {{/if}}
+  {{/each}}
+</section>
+
+
+
+{{#if thankyouView}}
+  <div class="overlay" id="aiThankyou">
+    <div class="overlay-content panel panel-dialog--big pal">
+      <h2 class="mtn text--center text--normal ptl"><i class="icon-ok-circled text--green"></i>{{__ 'Your ad has been submitted for review'}}</h2>
+      <p class="text--center pal">{{__ 'Your ad should be online soon.'}}</p>
+      <div class="gray-box text--center pbl ptl">
+        <a class="btn btn--primary" id="postAnotherAd" href="">{{__ "POST ANOTHER AD"}}</a>
+      </div>
+    </div>
+  </div>
+{{/if}}

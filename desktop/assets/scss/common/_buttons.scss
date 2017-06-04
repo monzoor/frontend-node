@@ -1,0 +1,73 @@
+//
+// Buttons
+// --------------------------------------------------
+
+@mixin button_color($bg-color, $border-color, $text-color){
+  background-color: $bg-color;
+  border-bottom: 2px solid $border-color;
+  color: $text-color;
+  
+  /* This class is triggered with Javascript touch events */
+  &:active {
+    border-top: 2px solid darken($border-color, 3%);
+    background-color: darken($bg-color, 3%);
+  }
+}
+
+.btn {
+  border: 0;
+  padding: 10px 15px 8px 15px;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  line-height: 1em;
+  vertical-align: top;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  border-radius: 2px;
+  cursor: pointer;
+
+  &:active {
+    border-bottom: 0;
+  }
+}
+
+
+//== Button variants
+//
+//## Button styles available on Ekhanei
+
+.btn--primary {
+  @include button_color($btn-primary-bg , $btn-primary-border, $btn-primary-color);
+}
+.btn--default {
+  @include button_color($btn-default-bg , $btn-default-border, $btn-default-color);
+}
+.btn--danger {
+  @include button_color($btn-danger-bg , $btn-danger-border, $btn-danger-color);
+}
+.btn--gray {
+  @include button_color($btn-gray-bg , $btn-gray-border, $btn-gray-color);
+}
+
+.btn--secondary {
+  @include button_color($btn-secondary-bg , $btn-secondary-border, $btn-secondary-color);
+}
+
+//## Branded buttons
+
+.btn--facebook {
+  @include button_color($facebook-blue , darken($facebook-blue, 10%), #ffffff);
+}
+
+.btn--sm {
+  padding: 7px 10px 5px 10px;
+  font-size: 0.9em;
+  vertical-align: middle;
+}
+.btn--block {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}

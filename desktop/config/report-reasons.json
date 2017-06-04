@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Item already sold"
+  }, {
+    "id": 2,
+    "name": "Item has unrealistic price"
+  }, {
+    "id": 3,
+    "name": "Item is stolen"
+  }, {
+    "id": 4,
+    "name": "The seller is a fraud"
+  }, {
+    "id": 5,
+    "name": "Item contains offensive language"
+  }
+]

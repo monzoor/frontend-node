@@ -1,0 +1,50 @@
+<script type="text/javascript">
+  window.criteo_q.push(
+    { event: "setAccount", account: 35670 },
+    { event: "setCustomerId", id: "{{loggedIn.phoneNumberHashed}}" },
+    { event: "setSiteType", type: "d" },
+    { event: "viewItem", item: "{{{ad.id}}}" }
+  );
+  // Criteo event on Show phone number CTA
+  function loadCriteoForPhoneNumber (){
+    var timestamp = new Date().getTime();
+  	window.criteo_q.push(
+			{ event: "setAccount", account: 35670 },
+			{ event: "setHashedEmail", id: "{{loggedIn.phoneNumberHashed}}" },
+			{ event: "setSiteType", type: "d" },
+			{ event: "trackTransaction", 
+        id: "{{{ad.id}}}_"+timestamp,
+        item:
+          [
+            { id: "{{{ad.id}}}",
+              price: 1,
+              quantity: 1
+            }
+          ]
+      }
+  	);
+  }
+
+  // Criteo event on Free chat CTA
+  function loadCriteoForFreeChat (e,t){
+    e.preventDefault();
+    var timestamp = new Date().getTime();
+  	window.criteo_q.push(
+			{ event: "setAccount", account: 35670 },
+			{ event: "setHashedEmail", id: "{{loggedIn.phoneNumberHashed}}" },
+			{ event: "setSiteType", type: "d" },
+			{ event: "trackTransaction", 
+        id: "{{{ad.id}}}_"+timestamp,
+        item:
+  				[
+  					{ id: "{{{ad.id}}}",
+              price: 1,
+  						quantity: 1
+  					}
+  				]
+			}
+		);
+    window.location.href = t.getAttribute("href");
+	}
+</script>
+

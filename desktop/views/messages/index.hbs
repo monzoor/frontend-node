@@ -1,0 +1,83 @@
+<section class="top">
+  <div class="container">
+    <a class="text--white" href="/"><strong>{{__ "Home"}}</strong></a>
+    <i class="icon-angle-double-right text--white"></i>
+    <span class="text--white">{{__ "My Messages"}}</span>
+  </div>
+</section>
+
+<div class="container mtm messages">
+  <div class="messages__lists">
+    <p class="text--lead text--center text--dark-gray messages__lists--headline">{{__ "Conversations"}}</p>
+    <ul class="conversation-list" id="conversationList">
+      {{#each conversations}}
+        {{> conversation-link}}
+      {{/each}}
+      {{> conversation-link}}
+    </ul>
+  </div>
+  <div class="messages__view loading" id="messagesView">
+    <div id="conversationWrapper" class="messages__wrapper">
+      {{!-- Conversation template injected here --}}
+    </div>
+    <div class="messages__snippets" id="messageSnippets">
+      <ul class="scroller">
+        {{#each snippets}}
+        <li><button class="snippet" data-text="{{ text }}" data-for="{{ for }}">{{ title }}</button></li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="messages__form">
+      <form id="messageForm" name="" method="POST">
+        <textarea name="content" class="form-field" data-placeholder="{{{__ "Write a new message to {{name}}..."}}}"></textarea>
+        <button type="submit" class="btn btn--primary message-btn">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{{!-- Conversation template --}}
+<script type="text/template" id="conversationTemplate">
+  <div class="ad-view">
+    <a href="\{{adLink}}">
+      <p class="text--left mbn text--truncate text--dark-gray ad-view--title"><strong>\{{title}}</strong></p>
+      <p class="text--orange mbn ad-view--price"><strong>‎৳ \{{price}}</strong><i class="icon-right-open mll text--muted"></i></p>
+    </a>
+  </div>
+  <ul class="messages__view-list" id="messages">
+    {{!-- Messages injected here --}}
+  </ul>
+</script>
+
+{{!-- Message template (injected into conversation template) --}}
+<script type="text/template" id="messageTemplate">
+  <li class="message \{{who}}">
+    <div class="message__avatar">
+      <div class="avatar avatar--sm">
+        <img class="avatar__img" src="\{{avatar}}" alt="">
+      </div>
+      <p class="text--center text--muted text--truncate mbn">
+        <small>\{{name}}</small>
+      </p>
+    </div>
+    <div class="message__box">
+      <p class="message__box--message">\{{message}}</p>
+      <p class="message__box--time">\{{time}}</p>
+    </div>
+  </li>
+</script>
+
+<script type="text/template" id="noMessagesTemplate">
+  <div class="pal">
+    <h3 class="mtn">{{__ "No messages"}}</h3>
+    <p>{{__ "You haven't sent or received any messages yet. To send a new message respond to an ad by clicking the \"Chat\" button, or post your own ad and people will get in touch with you."}}</p>
+    <div class="mtm">
+      <a href="/" class="btn btn--primary">{{__ "Search ads"}}</a>
+      <a href="/?postad=true" class="btn btn--primary">{{__ "Post an ad"}}</a>
+    </div>
+  </div>
+</script>
+
+<script type="text/template" id="snippetTemplate">
+  <li><button class="snippet" data-text="\{{text}}">\{{title}}</button></li>
+</script>

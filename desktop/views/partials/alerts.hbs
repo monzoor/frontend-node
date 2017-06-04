@@ -1,0 +1,39 @@
+<div class="text--center">
+  {{!-- Form validation errors --}}
+  {{#if errors}}
+    <div class="alert alert-danger">
+      <div class="wrapper-icon">
+        <i class="icon-alert-error extra-large no-margin"></i>
+      </div>
+      <div class="content">
+        <span>{{__ "There are errors with the form, please correct these below."}}</span>
+      </div>
+    </div>
+  {{/if}}
+
+  {{!-- Plain text error messages --}}
+  {{#if error}}
+    <div class="alert alert-danger">
+      <div class="wrapper-icon">
+        <i class="icon-alert-error extra-large no-margin"></i>
+      </div>
+      <div class="content">
+        <span>{{error}}</span>
+      </div>
+    </div>
+  {{/if}}
+
+  {{!-- Informative messages --}}
+  {{#if info}}
+    <div class="alert alert-info">
+      <span>{{info}}</span>
+    </div>
+  {{/if}}
+
+  {{!-- Success messages --}}
+  {{#if success}}
+    <div class="alert alert-success">
+      <span>{{success}}</span>
+    </div>
+  {{/if}}
+</div>

@@ -1,0 +1,19 @@
+<li class="ad">
+  <a href="/ad/{{this.slug}}-{{this.id}}">
+    <div class="ad__image-wrapper">
+      <div class="image" data-src="{{this.thumb}}"></div>
+      <div class="loader"></div>
+    </div>
+    <div class="ad__content">
+      <h2 class="ad__content--headline text--dark-gray text--truncate">{{this.title}}</h2>
+      <p class="ad__content--description text--dark-gray ">{{truncate this.description 150}}</p>
+      <div class="ad__content--location text--muted">
+        <i class="icon-location"></i>
+        <span class="text--muted">{{this.location}}</span>
+      </div>
+    </div>
+    <div class="ad__price">
+      <p class="text--orange man"><strong>৳ {{prettyNumber this.price}}</strong></p>
+    </div>
+  </a>
+</li>

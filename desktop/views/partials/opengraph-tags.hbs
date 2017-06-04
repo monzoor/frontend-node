@@ -1,0 +1,22 @@
+{{#if ad}}
+  <meta property="og:url"                content="{{ekhanei.fullUrl}}/ad/{{adSlug}}" />
+  <meta property="og:type"               content="website" />
+  <meta property="og:title"              content="{{ad.title}}" />
+  <meta property="og:description"        content="{{truncate ad.description 150}}" />
+  <meta name="title"                     content="{{ad.title}}" />
+  <meta name="description"               content="{{truncate ad.description 150}}" />
+  {{#if hasBlocketImages}}
+    <meta property="og:image"              content="{{images.[0]}}" />
+  {{else}}
+    <meta property="og:image"              content="{{ogImage}}" />
+  {{/if}}
+
+  {{else}}
+    <meta property="og:url"                content="{{ekhanei.fullUrl}}" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="{{__ 'Ekhanei: Buying & Selling Made Simple'}}" />
+    <meta property="og:description"        content="{{__ 'Ekhanei is the fastest, easiest, most convenient way to buy & sell anything in Bangladesh.'}}" />
+    <meta property="og:image"              content="{{ekhanei.fullUrl}}{{filerev '/img/og_image.jpg'}}" />
+    <meta name="title"                     content="{{__ 'Ekhanei: Buying & Selling Made Simple'}}" />
+    <meta name="description"               content="{{__ 'Ekhanei is the fastest, easiest, most convenient way to buy & sell anything in Bangladesh.'}}" />
+{{/if}}

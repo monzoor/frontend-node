@@ -1,0 +1,24 @@
+{
+  "sellers" : {
+    "fashion" : {
+      "url" : "https://www.surveymonkey.com/r/seller-fashion"
+    },
+    "bike" : {
+      "url" : "https://www.surveymonkey.com/r/seller-bikes"
+    },
+    "others" : {
+      "url" : "https://www.surveymonkey.com/r/seller-all-categories"
+    }
+  },
+  "buyers"  : {
+    "fashion" : {
+      "url" : "https://www.surveymonkey.com/r/buyer-fashion"
+    },
+    "bike" : {
+      "url" : "https://www.surveymonkey.com/r/buyer-bikes"
+    },
+    "others" : {
+      "url" : "https://www.surveymonkey.com/r/buyer-all-categories"
+    }
+  }
+}

@@ -1,0 +1,193 @@
+  <section class="top">
+    <div class="container-sm top__breadcrumbs">
+      <a href="/"><strong>{{__ 'Home'}}</strong></a>
+      <i class="icon-angle-double-right"></i>
+      <span>{{__ 'My profile'}}</span>
+    </div>
+  </section>
+
+  <div class="container-sm main mtm profile">
+    <form id="profileDetailsForm" action="/profile/me/edit" class="edit" method="POST" autocomplete="off" enctype="multipart/form-data">
+      <div class="profile__basic-infos">
+        <div class="avatar avatar--xl profile-avatar">
+          <img class="avatar__img" src="{{imageBaseUrl}}/image/avatar/{{#if user.preferences.avatarImageId}}{{user.preferences.avatarImageId}}{{else}}default{{/if}}/medium" alt="">
+          <label class="profile-avatar__input-label" for=""><i class="icon-pencil-squared"></i></label>
+          <input type="file" class="profile-avatar__input" name="photo" id="photoInput" accept="image/*" />
+        </div>
+        <div class="profile__name">
+          <div class="edit__item">
+            <h3>{{user.name}}</h3>
+            <div class="edit__inputs">
+              <input type="text" autofocus name="name" value="{{user.name}}">
+            </div>
+              {{#if errors.name}}<span class="error indent">{{errors.name}}</span>{{/if}}
+          </div>
+        </div>
+        <div class="text--right profile__tag">
+          <div class="verified"><i class="icon-ok-circled verified__icon"></i> <span class="verified__text">{{__ "Phone number verified"}}</span></div>
+        </div>
+      </div>
+
+      <div class="panel profile__other-infos">
+        <div class="profile__info">
+          <div class="profile-info">
+            <div class="profile-info__label">
+
+              <label for="" class="text--muted text--small">{{__ 'Location'}}</label>
+            </div>
+            <div class="profile-info__value">
+              <div class="edit__item">
+                <span>{{user.preferences.location}}</span>
+                <div class="edit__inputs">
+                  <input type="text" placeholder="location" name="preferences[location]" value="{{user.preferences.location}}" autofocus>
+                </div>
+                {{#if errors.[preferences/location]}}<span class="error indent">{{errors.[preferences/location]}}</span>{{/if}}
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-info">
+            <div class="profile-info__label">
+              <label for="" class="text--muted text--small">{{__ 'Gender'}}</label>
+            </div>
+            <div class="profile-info__value">
+              <div class="edit__item">
+                <span id="genderLevel">{{__ 'Select gender'}}</span>
+                <div class="edit__inputs select">
+                  <select name="preferences[gender]"  id="genderSelection">
+                    <option value="" selected="selected" disabled>{{__ 'Select gender'}}</option>
+                      <option value="2" {{#setSelect user.preferences.gender 2}}{{/setSelect}}>{{__ "Male"}}</option>
+                      <option value="1" {{#setSelect user.preferences.gender 1}}{{/setSelect}}>{{__ "Female"}}</option>
+                  </select>
+                </div>
+                  {{#if errors.[preferences/gender]}}<span class="error indent">{{errors.[preferences/gender]}}</span>{{/if}}
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-info">
+            <div class="profile-info__label">
+              <label for="" class="text--muted text--small">{{__ 'Birthday'}}</label>
+            </div>
+            <div class="profile-info__value">
+              <div class="dob date_name">
+                <div class="text--sub-headline">{{__ 'DAY'}} </div>
+              </div>
+              <div class="dob date_name">
+                <div class="text--sub-headline ">{{__ 'MONTH'}} </div>
+              </div>
+              <div class="dob date_name year">
+                <div class="text--sub-headline ">{{__ 'YEAR'}} </div>
+              </div>
+              <br>
+              <div class="edit__item dob">
+                <span>{{user.preferences.dob.day}}</span>
+                <div class="edit__inputs">
+                  <input id="day" class="first form-field" type="number" id="te" name="preferences[dob][day]" placeholder="{{__ "DD"}}" value="{{user.preferences.dob.day}}">
+                </div>
+              </div>
+              <div class="edit__item dob">
+                <span>{{user.preferences.dob.month}}</span>
+                <div class="edit__inputs">
+                    <input id="month" type="number" class="form-field" name="preferences[dob][month]" placeholder="{{__ "MM"}}" value="{{user.preferences.dob.month}}">
+                </div>
+              </div>
+              <div class="edit__item dob year">
+                <span>{{user.preferences.dob.year}}</span>
+                <div class="edit__inputs">
+                    <input id="year" class="last form-field" type="number" name="preferences[dob][year]" placeholder="{{__ "YYYY"}}" value="{{user.preferences.dob.year}}">
+                </div>
+              </div>
+              {{#if errors.[preferences/dob]}}<span class="error">{{__ "Invalid date of birth"}}</span>{{/if}}
+            </div>
+          </div>
+          <div class="profile-info">
+            <div class="profile-info__label">
+              <label for="" class="text--muted text--small">{{__ 'Preferences'}}</label>
+            </div>
+            <div class="profile-info__value">
+              <label><input type="checkbox" name="preferences[hidePhone]" value="true" {{#if user.preferences.hidePhone}}checked{{/if}}> <span class="text--normal">{{__ " Hide my phone number on ads"}}</span></label>
+            </div>
+          </div>
+          <div class="profile-info">
+            <div class="profile-info__value">
+              <button class="btn btn--primary profile__btn-submit profile__btn-submit--other-info mts" type="submit">{{__ 'Update'}}</button>
+            </div>
+          </div>
+        </div>
+          
+      </div>
+    </form>
+
+    <div class="panel mtl change-number pal" id="changephone">
+      <p class="text--sub-headline"><i class="icon-phone"></i> <span>{{__ 'Change mobile number'}}</span></p>
+      <form action="/account/phone" method="post">
+
+        <div class="input-group--3items">
+          <label class="input-item--label" for="">{{__ 'Current number'}}</label>
+          <input class="input-item--input" name="old_phone" type="text" value="{{form.old_phone}}">
+            {{#if errors.old_phone}}<span class="input-item--message error">{{errors.old_phone}}</span>{{/if}}
+        </div>
+
+        <div class="input-group--3items">
+          <label class="input-item--label" for="">{{__ 'New number'}}</label>
+          <input class="input-item--input" type="text" name="new_phone" value="{{form.new_phone}}">
+            {{#if errors.new_phone}}<span class="input-item--message error">{{errors.new_phone}}</span>{{/if}}
+        </div>
+
+        <button type="submit" class="btn btn--primary profile__btn-submit">{{__ 'change'}}</button>
+      </form>
+
+    </div>
+
+    <div class="panel mtl change-password pal" id="changepassword">
+      <p class="text--sub-headline"><i class="icon-cog"></i><span>{{__ 'Change password'}}</span>
+      <form action="/account/password" method="post" autocomplete="off">
+        <div class="input-group--3items">
+          <label class="input-item--label" for="">{{__ 'Your current password'}}</label>
+          <input class="input-item--input" type="password" name="old_password" value="{{form.old_password}}">
+            {{#if errors.old_password}}<span class="input-item--message error">{{errors.old_password}}</span>{{/if}}
+        </div>
+
+        <div class="input-group--3items">
+          <label class="input-item--label" for="">{{__ 'New password'}}</label>
+          <input class="input-item--input" type="password" name="new_password" value="{{form.new_password}}">
+            {{#if errors.new_password}}<span class="input-item--message error">{{errors.new_password}}</span>{{/if}}
+        </div>
+
+        <div class="input-group--3items">
+          <label class="input-item--label" for="">{{__ 'Confirm new password'}}</label>
+          <input class="input-item--input" type="password" name="confirm_password" >
+            {{#if errors.confirm_password}}<span class="input-item--message error">{{errors.confirm_password}}</span>{{/if}}
+        </div>
+
+        <button type="submit" class="btn btn--primary profile__btn-submit">{{__ 'change'}}</button>
+      </form>
+    </div>
+
+    <div class="panel mtl delete-account mbm pal">
+      <p class="text--sub-headline text--red"><i class="icon-trash"></i><span>{{__ 'Delete account'}}</span></p>
+      <p>{{{__ '<strong>Warning!</strong> Deleting your account will completely remove all of your ads, your profile, and messages. After deleting you will not be able to recover this data.'}}}</p>
+      <p>{{__ 'Are you sure you want to delete your account?'}}</p>
+
+      <label><input type="checkbox" id="sureDelete"> <span><strong>{{__ "Yes, I'm sure"}}</strong></span></label> <br>
+
+      <button id="delete-account-btn" class="btn btn--danger mts disable" disabled><i class="icon-trash"></i>{{__ 'Delete my account'}}</button>
+    </div>
+  </div>
+  
+  <div class="overlay hidden" id="deleteAccount">
+    <div class="overlay-content panel panel-dialog pal">
+      <h3 class="mtn text--center text--red">{{__ 'Delete account'}}</h3>
+      <form action="/account/delete" method="post">
+        <p class="mbs text--center ">{{__ "If you delete your account then any ads you've posted will be permanently removed." }}</p>
+        <p class="text--center">{{{__ "<strong>Are you sure you want to delete your account?</strong> If so then type your password to confirm."}}}</p>
+
+        <div class="form--group">
+          <input class="form--field placeholder-center" placeholder="{{__ "Your password"}}" type="password" name="password">
+          {{#if errors.password}}<span class="error">{{errors.password}}</span>{{/if}}
+        </div>
+        <button class="btn btn--danger btn--block mtm" type="submit">{{__ "Delete account"}}</button>
+      </form>
+    </div>
+  </div>

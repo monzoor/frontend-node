@@ -1,0 +1,125 @@
+//
+// Typography
+// --------------------------------------------------
+
+//== Headings
+//
+//## Global heading styles
+
+h1, h2, h3, h4, h5 {
+	margin: .6em 0;
+}
+
+h1 { font-size: 1.8em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.3em; }
+h4 { font-size: 0.9em; }
+
+h4 {
+	text-transform: uppercase;
+	color: $gray;
+}
+
+//== Paragraphs
+//
+//## Global paragraph styles
+
+p {
+	font-size: 1em;
+	margin: 0 0 1em 0;
+}
+
+
+//## Global text color styles
+.text {
+	// text size
+	&--small {
+		font-size: 0.9em;
+		line-height: 1.3em;
+	}
+
+	&--lead {
+		font-size: 1.1em;
+		line-height: 1.5em;
+		font-weight: bold;
+	}
+
+	&--sub-headline {
+		color: $gray;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	
+	// Color
+	&--muted {
+		color: $gray;
+	}
+	&--orange {
+		color: $orange;
+	}
+	&--dark-gray {
+		color: $text-color;
+	}
+	&--semi-gray {
+		color: lighten($text-color, 6.5%);
+	}
+	&--white {
+		color: $white;
+	}
+	&--red {
+		color: $brand-danger;
+	}
+	&--green {
+		color: $brand-green;
+	}
+	&--orange {
+		color: $orange;
+	}
+	&--blue {
+		color: $brand-blue;
+	}
+
+	// Alignment
+	&--center {
+		text-align: center;
+	}
+	&--right {
+		text-align: right;
+	}
+	&--left {
+		text-align: left;
+	}
+
+	// Text weight
+	&--strong {
+		font-weight: bold;
+	}
+	&--normal {
+		font-weight: normal;
+	}
+
+	//## Text modification
+	&--truncate {
+	  white-space: nowrap;
+	  text-overflow: ellipsis;
+	  overflow: hidden;
+	}
+
+	&--line-clamp {
+	  display: -webkit-box;
+	  -webkit-line-clamp: 2;
+	  -webkit-box-orient: vertical;
+	}
+
+	// Styel
+	&--underline {
+		text-decoration: underline;
+	}
+}
+
+//## Global link style
+a {
+	color: $link-color;
+	text-decoration: none;
+}
+

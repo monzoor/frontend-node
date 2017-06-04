@@ -1,0 +1,90 @@
+<div class="container-sm main mtm profile">
+  <form action="/profile/me/edit" class="edit" method="POST">
+    <div class="profile__basic-infos">
+      <div class="avatar avatar--xl profile-avatar">
+        <img class="avatar__img" src="{{imageBaseUrl}}/image/avatar/{{#if user.preferences.avatarImageId}}{{user.preferences.avatarImageId}}{{else}}default{{/if}}/medium" alt="">
+      </div>
+      <div class="profile__name">
+        <h3>{{user.name}}</h3>
+      </div>
+      <div class="text--right profile__tag">
+        <div class="verified"><i class="icon-ok-circled verified__icon"></i> <span class="verified__text">{{__ "Phone number verified"}}</span></div>
+      </div>
+    </div>
+
+    <div class="panel profile__other-infos not_loggedin">
+      <div class="profile__info">
+        {{#if user.preferences.location}}
+          <div class="profile-info">
+            <div class="profile-info__label">
+              <label for="" class="text--muted text--small">{{__ 'Location'}}</label>
+            </div>
+            <div class="profile-info__value">
+              <span>{{user.preferences.location}}</span>
+            </div>
+          </div>
+        {{/if}}
+        {{#if user.gender}}
+          <div class="profile-info">
+            <div class="profile-info__label">
+              <label for="" class="text--muted text--small">{{__ 'Gender'}}</label>
+            </div>
+            <div class="profile-info__value">
+              <span>{{user.gender}}</span>
+            </div>
+          </div>
+        {{/if}}
+        <div class="profile-info">
+          <div class="profile-info__label">
+            <label for="" class="text--muted text--small">{{__ 'Preferences'}}</label>
+          </div>
+          <div class="profile-info__value">
+            <label><input type="checkbox" disabled {{#if user.preferences.hidePhone}}checked{{/if}}> <span class="text--strong"> {{__ " Hide my phone number on ads"}}</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="container-sm main">
+  <div class="ad-lists ad-lists--personal mtm">
+    {{#unless ads}}
+      <div class="alert alert-info">{{__ "Unfortunately we didn't find any ads. To post your ad"}} <a class="text--underline" href="/?postad=true">{{__ 'Click here'}}</a> </div>
+    {{/unless}}
+    <ul>
+      {{#each ads}}
+        <li class="ad pal">
+          <a href="/ad/{{this.slug}}-{{this.adId}}">
+            <div class="ad__image-wrapper">
+              <div class="image" data-src="/image/{{image.id}}/thumb"></div>
+              <div class="loader"></div>
+            </div>
+          </a>
+          <div class="ad__content">
+            <a href="/ad/{{this.slug}}-{{this.adId}}">
+              <h2 class="ad__content--headline text--dark-gray text--truncate">{{truncate this.title 50}}</h2>
+              <p class="ad__content--description text--dark-gray ">{{truncate this.description 60}}</p>
+              <div class="ad__content--location text--muted">
+                <i class="icon-location"></i>
+                <span class="text--muted mrm">{{this.address}}</span>
+                <i class="icon-clock"></i>
+                <span class="text--muted">{{this.list_time}}</span>
+              </div>
+            </a>
+            <div class="edit-buttons mtm">
+              <a href="/ad/{{this.slug}}-{{this.adId}}/edit?postad=true" class="btn btn--gray mrm link--blue"><i class="icon-cog"></i> {{@root.__ "Edit Ad"}}</a>
+              <a href="/ad/{{this.slug}}-{{this.adId}}/delete" class="btn btn--primary"><i class="icon-ok"></i> {{@root.__ "I sold this item"}}</a>
+            </div>
+          </div>
+          <a href="/ad/{{this.slug}}-{{this.adId}}">
+            <div class="ad__price">
+              <p class="text--orange man"><strong>৳ {{prettyNumber this.price}}</strong></p>
+            </div>
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
+

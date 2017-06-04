@@ -1,0 +1,183 @@
+form {
+  /*
+  // Global input style
+  */
+  input[type="text"],
+	input[type="number"],
+	input[type="email"],
+	input[type="password"],
+	textarea,
+	select {
+	  -webkit-appearance: none;
+	  -moz-appearance:    none;
+	  appearance:         none;
+
+	  background-color: transparent;
+	  position: relative;
+	  z-index: 10;
+	  width: 100%;
+	  border: 0;
+	  padding: $spacing-sm;
+	  @include border-radius(3px);
+	  outline: none;
+	  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+	  border: 1px solid $btn-default-border;
+	}
+
+	/* Remove controls from Safari and Chrome */
+	input[type=number]::-webkit-inner-spin-button,
+	input[type=number]::-webkit-outer-spin-button {
+	  -webkit-appearance: none;
+	  margin: 0; /* Removes leftover margin */
+	}
+
+	/*
+  // Global input group style
+  */
+	.input-group {
+		// Single column layout
+		&--items {
+			margin-bottom: 10px;
+			border: 0;
+			input {
+				border: 0;
+			}
+			.error {
+				margin-left: 10px;
+			}
+		}
+
+		.input-items {
+			&--bg-white {
+				background-color: $white;
+			}
+			&--bg-gray {
+				background-color: #f2f2f2;
+			}
+			&--shadow {
+				border: 0;
+				border-radius: 0;
+				box-shadow: 1px 1px 0 rgba(0,0,0,.1);
+			}
+		}
+
+		// Three column layout
+	  &--3items {
+	    @include cf();
+	    margin-bottom: $spacing-md;
+	    .input-item {
+	      &--label {
+	        @include column(1.1/4, $gutter: 0);
+	        margin-top: $spacing-sm;
+	        @extend .text--muted;
+	        font-weight: 500;
+	      }
+	      &--input {
+	        @include column(1.2/3, $gutter: 0);
+	      }
+	      &--message {
+	        @include column(0.9/3, $gutter: 0, $cycle: 3);
+	      }
+	    }
+	  }
+
+		// two column layout
+	  &--2items {
+			@extend .input-group--3items;
+			.input-item {
+				&--label {
+					margin-top: 0;
+				}
+				&--value {
+					@extend .input-item--label;
+					font-weight: bold;
+					margin-top: 0;
+				}
+			}
+		}
+		&.radio {
+      padding-left: 0;
+      label {
+        @extend .text--dark-gray;
+        font-weight: bold;
+        display: inline-block;
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        input {
+          vertical-align: -1px;
+        }
+      }
+      &.center-aligned {
+        label {
+          width: 100%;
+          padding-left: 32%;
+        }
+      }
+    }
+	}
+
+	.select, .select-multiple {
+		position: relative;
+		&:after {
+			content: '\e811';
+			font-family: "ekhanei";
+			position: absolute;
+			right: 10px;
+			top: 10px;
+		}
+		&.active {
+			&:after{
+				content: '\e81e';
+			}
+		}
+	}
+
+	// Error element (should be <span>)
+  .error {
+    display: block;
+    color: $brand-danger;
+    text-transform: uppercase;
+    font-size: .75em;
+    font-weight: 500;
+    
+    &.hide,
+    &.hidden {
+      display: none;
+    }
+  }
+  input, select, textarea{
+    &.input--error  {
+    	border: 1px solid $brand-danger;
+    	font-size: 1em;
+    	font-weight: normal;
+    }
+  }
+}
+.placeholder-center {
+  text-align: center;
+
+  input {
+    text-align: center;
+
+    &::-webkit-input-placeholder {
+      text-align: center;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+      text-align: center;  
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+      text-align: center;  
+    }
+
+    &:-ms-input-placeholder {  
+      text-align: center; 
+    }
+  }
+}

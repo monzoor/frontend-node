@@ -1,0 +1,37 @@
+{{> ads/criteo-tracking-code-ad-lists}}
+<section class="top">
+  <div class="container">
+    <div class="hero-unit">
+      <h1 class="hero-unit__heading">{{{__ 'Buying &amp; Selling Made Simple.'}}}</h1>
+      <p class="hero-unit__subheading">{{{__ 'Ekhanei is the fastest, easiest, most convenient way to buy &amp; sell anything in Bangladesh.'}}}</p>
+    </div>
+    {{> search-bar}}
+  </div>
+</section>
+
+<div class="container-sm main">
+  {{> ads/ai-form}}
+  <section class="ad-list mtm">
+    {{> ads/category-switcher}}
+
+    <div class="ad-lists mtm">
+      {{#unless ads}}
+        <div class="alert alert-info">{{__ "Unfortunately we didn't find any ads matching your search. Please try again."}}</div>
+      {{/unless}}
+      <ul>
+        {{#each ads}}
+          {{> ads/list-item}}
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="ad-pagination text--center mtl">
+      <div class="ad-pagination_buttons mbs">
+        {{#if pages.prev}}<a href="{{pages.prev}}" class="btn btn--default">&laquo; {{__ "Prev"}}</a>{{/if}}
+        {{#if pages.next}}<a href="{{pages.next}}" class="btn btn--default">{{__ "Next"}} &raquo;</a>{{/if}}
+      </div>
+      <span class="ad-pagination_current text--small text--muted">{{__ "Page %s" pages.current}}</span>
+    </div>
+  </section>
+
+</div>

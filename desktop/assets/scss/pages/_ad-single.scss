@@ -1,0 +1,152 @@
+.slider {
+  overflow: hidden;
+  padding: 0;
+
+  &__nav {
+    position: absolute;
+    border: 0;
+    top: 0;
+    height: 400px;
+    padding: 0 7px;
+    background-color: rgba(0,0,0,0.3);
+    display: table;
+    &--prev {
+      left: 0;
+    }
+    &--next {
+      right: 0;
+    }
+    i {
+      margin-top: 190px;
+      display: block;
+      color: $white;
+    }
+  }
+  &__thumbnails {
+    @include cf();
+    background-color: $white;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    .thumbnail {
+      display: inline-block;
+      border: 2px solid $body-bg;
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &.selected {
+        border: 2px solid $brand-blue;
+      }
+    }
+  }
+}
+//slider core style
+.img-slider {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  > ul {
+    position: relative;
+    @include cf();
+    @include single-transition(all, .5s);
+
+    list-style: none;
+    margin: 0; padding: 0;
+    left: 0;
+    > li {
+      float: left;
+      width: 100%; height: 400px;
+      position: relative;
+      // background-color: #000; // Fallback
+      background-color: $black;
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.ad_details {
+  &__title {
+    line-height: 1.2em;
+    margin: 1.2em 0 .3em 0;
+  }
+  &__description {
+    @include cf();
+    padding-bottom: 0;
+    width: 100%;
+    margin-top: 50px;
+  }
+  .meta {
+    @include cf();
+    padding: 0;
+  }
+  &--meta {
+    width: 50%;
+    background-color: $white;
+    float: left;
+    padding: 10px;
+    border-top: 1px solid $body-bg;
+    &:last-child {
+      border-left: 1px solid $body-bg;
+    }
+  }
+}
+.contact-details {
+  @include cf();
+  background-color: $white;
+  &--headline {
+    background-color: #fafafa;
+    border-bottom: 1px solid $body-bg;
+    padding: 10px;
+  }
+  &__buttons {
+    @include column(2.3 / 5, $gutter: 0);
+    padding: 20px;
+    border-right: 1px solid $body-bg;
+    min-height: 120px;
+  }
+  &__phone-number {
+    border-bottom: 2px solid $body-bg;;
+    background-color: $brand-green;
+  }
+  &__seller-details {
+    @include column(2.7 / 5, $gutter: 0);
+    padding: 20px 10px;
+    text-align: center;
+    a {
+      display: block;
+    }
+    .seller-details {
+      margin: 0 auto;
+      &__profile-picture {
+        display: inline-block;
+        border: 0;
+      }
+      &__others {
+        display: inline-block;
+        vertical-align: top;
+        margin: 13px 0 0 31px;
+        width: 50%;
+      }
+      .icon {
+        display: inline-block;
+        vertical-align: top;
+        margin: 32px 0 0 20px;  
+      }
+    }
+  }
+}
+.ad_modify {
+  &--link {
+    font-size: .9em;
+  }
+}

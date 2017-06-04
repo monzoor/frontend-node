@@ -1,0 +1,49 @@
+.welcome {
+  $strip-height: 240px;
+  $padding-horizontal: 80px;
+  $box-top-distance: 130px;
+  // Should be the same as standard definition BG image
+  $bg-width: 462px;
+  $bg-height: 506px;
+
+  position: relative;
+
+  &__strip {
+    background-color: $top-color;
+    height: $strip-height;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    min-height: $bg-height;
+
+    /* Background image */
+    background-image: url(../img/welcome.jpg);
+    background-repeat: no-repeat;
+    background-position: $padding-horizontal 0;
+    background-size: $bg-width $bg-height;
+
+    /* Retina background */
+    @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+    only screen and (-moz-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min-device-pixel-ratio: 1.5) {
+      background-image: url(../img/welcome@2x.jpg);
+    }
+  }
+
+  &__box {
+    float: right;
+    margin-right: $padding-horizontal;
+    margin-top: $box-top-distance;
+    width: 280px;
+    padding: 20px;
+    background-color: $white;
+  }
+}

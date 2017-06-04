@@ -1,0 +1,36 @@
+{{#each currentCategory.filters}}
+  {{#if multiple_select}}
+    <li class="">
+      <div class="select-multiple">
+        <div class="select-multiple--headline">
+          {{@root.__ 'Select'}} {{label}}
+        </div>
+        <ul class="select-multiple--options" id="multipleOptions">
+          {{#each filter_options}}
+            <li>
+              <label>
+                <input type="checkbox" id="{{../slug}}-ids-{{id}}" name="{{../slug}}-ids" value="{{id}}">
+                <span class="text--normal">{{title}}</span>
+              </label>
+            </li>
+          {{/each}}
+        </ul>
+        <div class="select-multiple--selected">
+          <ul></ul>
+        </div>
+      </div>
+    </li>
+    {{else}}
+    <li>
+      <div class="form-group select">
+        <select name="{{slug}}-id" id="{{slug}}" class="form-field">
+          <option selected="" disabled value="">{{@root.__ 'Select '}} {{label}}</option>
+          {{#each filter_options}}
+            <option value="{{id}}">{{title}}</option>
+          {{/each}}
+          <option value="0">{{@root.__ 'Any '}} {{label}}</option>
+        </select>
+      </div>
+    </li>
+  {{/if}}
+{{/each}}

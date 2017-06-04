@@ -1,0 +1,19 @@
+<div class="container-sm panel mtl">
+	<form action="" method="post">
+		<p class="text--sub-headline text--center mbn mts">{{__ "Why do you want to delete this ad?"}}</p>
+		<div class="text--center mtm">
+	    <div class="input-group radio mza">
+	      <label><input type="radio" name="reason" value="sold"> {{__ 'Sold on Ekhanei'}}</label>
+	      <label><input type="radio" name="reason" value="soldoutside"> {{__ 'Sold outside Ekhanei'}}</label>
+	      <label><input type="radio" name="reason" value="unsold"> {{__ 'Not sold'}}</label>
+	      <label><input type="radio" name="reason" value="unsoldrepost"> {{__ 'Delete to repost'}}</label>
+	    </div>
+	    {{#if errors.reason}}<span class="error text-center">{{errors.reason}}</span>{{/if}}
+	  </div>
+
+		<div class="btn--group mtl">
+			<button class="btn btn--danger btn--block" type="submit">{{__ 'Delete ad'}}</button>
+			<a class="btn btn--gray btn--block" href="/ad/{{adSlug}}">{{__ 'Cancel'}}</a>
+	  </div>
+	</form>
+</div>

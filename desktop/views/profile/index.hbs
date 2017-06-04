@@ -1,0 +1,28 @@
+<div class="container-sm main mtm profile">
+  <form action="/profile/me/edit" class="edit" method="POST">
+    <div class="profile__basic-infos">
+      <div class="avatar avatar--xl profile-avatar">
+        <img class="avatar__img" src="{{imageBaseUrl}}/image/avatar/{{#if user.preferences.avatarImageId}}{{user.preferences.avatarImageId}}{{else}}default{{/if}}/medium" alt="">
+      </div>
+      <div class="profile__name">
+        <h3>{{user.name}}</h3>
+      </div>
+      <div class="text--right profile__tag">
+        <div class="verified"><i class="icon-ok-circled verified__icon"></i> <span class="verified__text">{{__ "Phone number verified"}}</span></div>
+      </div>
+    </div>
+
+    <div class="panel profile__other-infos not_loggedin">
+      <div class="profile__info">
+        <div class="profile-info">
+          <div class="profile-info__label">
+            <label for="" class="text--muted text--small">{{__ 'Location'}}</label>
+          </div>
+          <div class="profile-info__value">
+            <span>{{user.preferences.location}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

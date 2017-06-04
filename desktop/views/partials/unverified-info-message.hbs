@@ -1,0 +1,7 @@
+{{#if showUnverifiedMessage}}
+	<div class="alert alert-info text--center{{#if header.joined}} alert-joined{{/if}}">
+	  <span>{{__ "You haven't verified your phone number"}}</span>
+	  <a href="" class="btn btn--primary btn--sm mls" data-action="{{#if loggedIn}}verify-phonenumber{{else}}verify-registration{{/if}}">{{__ "Complete registration"}}</a>
+	</div>
+	{{> phonenumber-change-verification-panel}}
+{{/if}}

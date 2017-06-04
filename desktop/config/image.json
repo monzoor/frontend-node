@@ -1,0 +1,66 @@
+{
+  "avatar": {
+    "sizes": {
+      "thumb": {
+        "type": "thumbnail",
+        "attributes": {
+          "mode": "cover",
+          "width": 75,
+          "height": 75
+        },
+        "default": "./assets/img/defaults/avatar_thumb.jpg"
+      },
+      "medium": {
+        "type": "thumbnail",
+        "attributes": {
+          "mode": "cover",
+          "width": 150,
+          "height": 150
+        },
+        "default": "./assets/img/defaults/avatar_medium.jpg"
+      }
+    },
+    "tmp_upload_path": ".tmp/ad_photos/"
+  },
+  "ad": {
+    "sizes": {
+      "square": {
+        "type": "thumbnail",
+        "attributes": {
+          "mode": "cover",
+          "width": 80,
+          "height": 80
+        }
+      },
+      "thumb": {
+        "type": "thumbnail",
+        "attributes": {
+          "mode": "cover",
+          "width": 140,
+          "height": 110
+        }
+      },
+      "medium": {
+        "type": "watermark",
+        "attributes": {
+          "type": "local",
+          "data": "watermark_bangladesh.png",
+          "position": "bottom-left",
+          "resize": {
+            "width": 640,
+            "height": 420
+          }
+        }
+      },
+      "opengraph": {
+        "type": "thumbnail",
+        "attributes": {
+          "mode": "cover",
+          "width": 1200,
+          "height": 630
+        }
+      }
+    },
+    "tmp_upload_path": ".tmp/avatars/"
+  }
+}
